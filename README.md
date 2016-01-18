@@ -30,3 +30,4 @@ To use Scss Lint, run "gem install scss_lint"
 # Changelog
 
 changelog can be found [here](CHANGELOG.md)
+
