@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="headToHeadWidget">
+<head>
+   <title>Poll widget</title>
+   <meta charset="UTF-8">
+   <meta name="apple-mobile-web-app-title" content="Kambi">
+   <meta name="description" content="Kambi Sportsbook Head to Head widget">
+   <meta name="HandheldFriendly" content="True">
+   <meta name="MobileOptimized" content="320">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+   <meta name="fragment" content="!"/>
+
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+   <meta name="apple-mobile-web-app-title" content="">
+
+   <!-- Include some fonts/iconfonts that we want to use -->
+   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"/>
+
+   <!-- build:css -->
+   <!-- This section will be replaced in the gulp build process -->
+   <link rel="stylesheet" type="text/css" href="css/app.css"/>
+   <!-- endbuild -->
+
+   <!-- Include angular and the the Kambi widget api -->
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+
+   <!-- build:js -->
+   <!-- This section will be replaced in the gulp build process -->
+   <script src="js/app.js"></script>
+   <script src="js/controllers/appController.js"></script>
+   <script src="../node_modules/kambi-sportsbook-widget-library/src/js/controllers/widgetCoreController.js"></script>
+   <script src="../node_modules/kambi-sportsbook-widget-library/src/js/services/kambiWidgetService.js"></script>
+   <script src="../node_modules/kambi-sportsbook-widget-library/src/js/services/kambiAPIService.js"></script>
+   <script src="../node_modules/kambi-sportsbook-widget-core-translate/dist/translate.js"></script>
+   <!-- endbuild -->
+   <script src="https://c3-static.kambi.com/sb-mobileclient/widget-api/1.0.0.7/kambi-widget-api.js"></script>
+</head>
+
+<body class="kw-body">
+<div class="kw-card l-flexbox l-vertical l-expander" ng-controller="appController" ng-if="poll !== false">
+
+   <!--Header-->
+   <header class="kw-header l-pl-15">Head to Head</header>
+
+</div>
+</body>
+</html>

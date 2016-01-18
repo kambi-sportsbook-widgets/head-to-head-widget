@@ -1,0 +1,43 @@
+{
+   "name": "head-to-head-widget",
+   "version": "0.1.0",
+   "description": "Head to Head Widget",
+   "main": "dist/index.html",
+   "scripts": {
+      "changelog" : "changelog kambi-sportsbook-widgets/head-to-head-widget all -m > CHANGELOG.md",
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "dependencies": {
+      "del": "^2.0.2",
+      "grunt": "^0.4.5",
+      "grunt-cli": "^0.1.13",
+      "gulp": "^3.9.0",
+      "gulp-awspublish": "^3.0.1",
+      "gulp-concat": "^2.6.0",
+      "gulp-filter": "^3.0.1",
+      "gulp-help": "^1.6.1",
+      "gulp-html-replace": "^1.5.4",
+      "gulp-install": "^0.6.0",
+      "gulp-jshint": "^1.12.0",
+      "gulp-minify-css": "^1.2.1",
+      "gulp-jsonminify": "^1.0.0",
+      "gulp-rename": "^1.2.2",
+      "gulp-ruby-sass": "^2.0.5",
+      "gulp-sourcemaps": "^1.6.0",
+      "gulp-strip-debug": "^1.0.2",
+      "gulp-uglify": "^1.4.2",
+      "changelog": "latest",
+      "kambi-sportsbook-widget-core-translate": "git+ssh://git@github.com/kambi-sportsbook-widgets/widget-core-translate.git",
+      "kambi-sportsbook-widget-library": "git+ssh://git@github.com/kambi-sportsbook-widgets/widget-library.git"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+ssh://git@github.com/kambi-sportsbook-widgets/head-to-head-widget.git"
+   },
+   "author": "andrei@globalmouth.com",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/kambi-sportsbook-widgets/head-to-head-widget/issues"
+   },
+   "homepage": "https://github.com/kambi-sportsbook-widgets/head-to-head-widget#readme"
+}
