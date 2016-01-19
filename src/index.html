@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app="headToHeadWidget">
 <head>
-   <title>Poll widget</title>
+   <title>Head to head</title>
    <meta charset="UTF-8">
    <meta name="apple-mobile-web-app-title" content="Kambi">
    <meta name="description" content="Kambi Sportsbook Head to Head widget">
@@ -17,7 +17,6 @@
    <meta name="apple-mobile-web-app-title" content="">
 
    <!-- Include some fonts/iconfonts that we want to use -->
-   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"/>
 
    <!-- build:css -->
@@ -44,10 +43,108 @@
 </head>
 
 <body class="kw-body">
-<div class="kw-card l-flexbox l-vertical l-expander" ng-controller="appController">
+<div class="kw-card l-flexbox l-vertical l-expander" ng-controller="appController" ng-cloak>
 
    <!--Header-->
-   <header class="kw-header l-pl-15">Head to Head</header>
+   <header class="kw-header l-flexbox">
+      <div class="l-flex-2 l-flexbox l-pack-center">{{data.homeName}}</div>
+      <div class="l-flexed l-flexbox l-pack-center">vs</div>
+      <div class="l-flex-2 l-flexbox l-pack-center">{{data.awayName}}</div>
+   </header>
+
+   <!--Main-->
+   <main id="kw-main l-flexbox l-vertical" class="kw-main">
+
+      <!--History-->
+      <div class="kw-border-bottom" ng-if="defaultArgs.enabled.history">
+         <h4 class="l-flexbox l-pack-center l-mt-5"><strong>{{ 'History' | translate }}</strong></h4>
+         <div id="kw-history" class="kw-history l-flexbox l-horizontal l-flexed">
+            <div class="l-flexbox l-pack-center l-align-center l-flexed l-vertical"
+                 ng-repeat="(key, value) in data.statistics.history">
+
+               <span ng-if="$index === 1">{{ 'Draws' | translate }}</span>
+               <span ng-if="$index !== 1">{{ 'Wins' | translate }}</span>
+               <span class="kw-history-circle l-flexbox l-pack-center l-align-center"
+                     style="height: {{ circle_height / history_max * value }}px; width: {{ circle_height / history_max * value }}px;">
+                  {{value}}
+               </span>
+            </div>
+         </div>
+      </div>
+
+      <!--Last Meetings-->
+      <div class="kw-border-bottom l-pt-10" ng-if="defaultArgs.enabled.meetings">
+         <h4 class="l-flexbox l-pack-center l-mb-5"><strong>{{ 'Last Meetings' | translate }}</strong></h4>
+         <div id="kw-last-meetings" class="kw-last-meetings l-flexbox l-vertical l-flexed l-pl-15 l-pr-15 l-pb-5">
+
+            <div class="kw-last-meeting l-flexbox l-pack-center l-align-center l-flexed l-horizontal l-mb-10"
+                 ng-repeat="stat in data.statistics.lastMeetings">
+
+               <div class="l-flexbox l-flex-1 l-pack-end l-align-center">
+               <span class="kw-stat-bar l-flexbox l-pack-end l-align-center" style="width: {{ stat.homeScore / meetings_max * 100 | number: 1 }}%">
+                  <span class="kw-stat-value l-pl-15 l-pr-5">{{stat.homeScore | number: 0}}</span>
+               </span>
+               </div>
+
+               <div class="l-flexbox l-flex-1 l-pack-start l-align-center">
+                  <span class="kw-stat-bar l-flexbox l-pack-start l-align-center" style="width: {{ stat.awayScore / meetings_max * 100 | number: 1 }}%">
+                     <span class="kw-stat-value l-pl-5 l-pr-15">{{stat.awayScore | number: 0}}</span>
+                  </span>
+               </div>
+            </div>
+
+         </div>
+      </div>
+
+      <!--Performance-->
+      <div ng-if="defaultArgs.enabled.performance" class="kw-border-bottom l-p-15 l-pt-10">
+         <h4 class="l-flexbox l-pack-center l-mb-5">
+            <span>{{ performance_home_total / performance_total * 100 | number: 1 }}%</span>
+            <strong class="l-flex-1 l-flexbox l-pack-center">{{ 'Performance' | translate }}</strong>
+            <span>{{ performance_away_total / performance_total * 100 | number: 1 }}%</span>
+         </h4>
+         <div class="kw-performance l-flexbox l-vertical l-flexed">
+
+            <!--tendency labels-->
+            <div class="l-flexbox l-horizontal l-mb-15">
+               <!--Home Team-->
+               <div class="l-flexbox l-flex-1 l-pack-end l-mr-5">
+                  <div class="kw-performance-tendency tendency-{{stat.tendency}} l-flexbox l-pack-center l-align-center l-flexed l-horizontal"
+                       ng-repeat="stat in data.statistics.performance['homeTeam']">
+                     {{stat.tendency}}
+                  </div>
+               </div>
+
+               <!--Away Team-->
+               <div class="l-flexbox l-flex-1 l-pack-start l-pl-5">
+                  <div class="kw-performance-tendency tendency-{{stat.tendency}} l-flexbox l-pack-center l-align-center l-flexed l-horizontal"
+                       ng-repeat="stat in data.statistics.performance['awayTeam']">
+                     {{stat.tendency}}
+                  </div>
+               </div>
+            </div>
+
+            <!--Performance points-->
+            <div class="l-flexbox l-horizontal">
+               <!--Home team-->
+               <div class="kw-performance-points l-flexed l-flexbox l-mr-5">
+                  <div style="width: {{ performance_home_total / performance_total * 100 | number: 1 }}%"
+                     class="l-flexbox">
+                  </div>
+               </div>
+
+               <!--Away team-->
+               <div class="kw-performance-points l-flexed l-flexbox l-ml-5">
+                  <div style="width: {{ performance_away_total / performance_total * 100 | number: 1 }}%"
+                       class="l-flexbox">
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+
+   </main>
 
 </div>
 </body>

@@ -1,16 +1,21 @@
 //General Widget Classes
 //Using a low nesting structure in order to ease the theming
 
+h4 {
+   font-size: 13px;
+
+   span {
+      font-size: 11px;
+   }
+
+}
+
 .anim-fade-in.ng-enter, .anim-fade-in.ng-leave.ng-leave-active {
    opacity: 0;
 }
 
 .anim-fade-in.ng-enter.ng-enter-active {
    opacity: 1;
-   -webkit-animation: zoomIn 0.1s;
-   -moz-animation: zoomIn 0.1s;
-   -ms-animation: zoomIn 0.1s;
-   animation: zoomIn 0.1s;
    -webkit-animation-fill-mode: both;
    animation-fill-mode: both;
 }

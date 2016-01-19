@@ -1,0 +1,102 @@
+
+.kw-main {
+   height: 100%;
+}
+
+.kw-border-bottom {
+   border-bottom: 1px solid $color-4-1-card-border;
+}
+
+.kw-history {
+
+   > div {
+      padding: 0 15px 15px;
+
+      .kw-history-circle {
+         @include text-shadow(1px 1px 0 rgba(0, 0, 0, 0.16));
+         background-color: $color-2-2-primary-background;
+         color: white;
+         @include border-radius(200px);
+         font-size: 16px;
+         font-weight: 600;
+         height: 0;
+         line-height: 1.2;
+         width: 0;
+      }
+
+      &:last-child {
+         .kw-history-circle {
+            background-color: darken($color-2-2-primary-background, 3%);
+         }
+      }
+   }
+}
+
+.kw-last-meetings {
+   @include text-shadow(1px 1px 0 rgba(0, 0, 0, 0.16));
+
+   .kw-last-meeting {
+      @include border-radius(3px);
+      background-color: $color-4-1-card-border;
+
+      div {
+         position: relative;
+
+         &:first-child {
+            .kw-stat-bar {
+               @include border-radius(3px 0 0 3px);
+            }
+         }
+
+         &:last-child {
+            .kw-stat-bar {
+               @include border-radius(0 3px 3px 0);
+               background-color: darken($color-2-2-primary-background, 3%);
+            }
+         }
+      }
+
+      .kw-stat-bar {
+         background-color: $color-2-2-primary-background;
+         @include transition(width .3s ease-out);
+         color: white;
+         min-height: 20px;
+         min-width: 20px;
+         width: 0;
+      }
+   }
+}
+
+.kw-performance {
+
+   .kw-performance-tendency {
+      border: 1px solid $color-4-1-card-background;
+      color: white;
+      min-width: 15px;
+      text-align: center;
+      @include text-shadow(1px 1px 0 rgba(0, 0, 0, 0.16));
+   }
+
+   .tendency-W {
+      background-color: lighten($color-2-2-primary-background, 10%);
+   }
+
+   .tendency-D {
+      background-color: $color-2-2-primary-background;
+   }
+
+   .tendency-L {
+      background-color: darken($color-2-2-primary-background, 10%);
+   }
+
+   .kw-performance-points {
+      background-color: $color-4-1-card-border;
+
+      div {
+         background-color: $color-2-2-primary-background;
+         @include transition(width .3s ease-out);
+         min-height: 5px;
+         width: 0;
+      }
+   }
+}
