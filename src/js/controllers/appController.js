@@ -17,6 +17,7 @@
                   'enabled': {
                      'history': true,
                      'performance': true,
+                     'leagueTable': true,
                      'meetings': true
                   }
                };
@@ -25,7 +26,7 @@
                 * Keep the height to 0 until we get data
                 * @type {number}
                 */
-               $scope.defaultHeight = 550;
+               $scope.defaultHeight = 750;
 
                // percentage of the Widget height minus the header
                $scope.circle_height = ($scope.defaultHeight - 40) * $scope.defaultArgs.history_height;
@@ -51,6 +52,11 @@
                         // Applied a small delay for nice animation effect
                         $timeout(function() {
                            $scope.setPerformanceGraph($scope.data.statistics.performance);
+                        }, 300);
+
+                        // Applied a small delay for nice animation effect
+                        $timeout(function() {
+                           $scope.setTable($scope.data.statistics.leagueTable);
                         }, 300);
                      }
                   }, function errorCallback( response ) {
@@ -84,11 +90,23 @@
                   $scope.meetings_max = Math.max.apply(Math, [meeting_home_max, meeting_away_max]);
                };
 
+               /**
+                * Set performance graphs
+                * @param performance_data
+                */
                $scope.setPerformanceGraph = function (  performance_data ) {
                   $scope.performance_total = 20 * performance_data['homeTeam'].length; // a wild assumption for mock data
                   $scope.performance_home_total = $scope.getTotals(performance_data['homeTeam'], 'points');
                   $scope.performance_away_total = $scope.getTotals(performance_data['awayTeam'], 'points');
-                  console.log($scope.performance_home_total);
+               };
+
+               /**
+                * Set table data
+                * @param table
+                */
+               $scope.setTable = function( table ) {
+                  $scope.columnLabels = table.columnLabels;
+                  $scope.leagueTableRows = table.leagueTableRows;
                };
 
                /**
@@ -130,9 +148,9 @@
                 * Init the controller and get the poll data based on the event id
                 */
                $scope.init().then(function () {
-
+                  $scope.getStatsData();
                });
-               $scope.getStatsData();
+
             }]);
    })(angular.module('headToHeadWidget'));
 })();

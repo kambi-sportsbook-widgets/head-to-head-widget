@@ -1,8 +1,8 @@
 {
    "id": 1003030992,
-   "name": "Accrington Stanley - Hartlepool United",
-   "homeName": "Accrington Stanley",
-   "awayName": "Hartlepool United",
+   "name": "Manchester City - Arsenal FC",
+   "homeName": "Manchester City",
+   "awayName": "Arsenal FC",
    "start": "2016-01-19T19:45Z",
    "group": "League Two",
    "type": "ET_MATCH",
@@ -17,11 +17,11 @@
    "participants": [
       {
          "participantId": 1000003645,
-         "name": "Accrington Stanley"
+         "name": "Manchester City"
       },
       {
          "participantId": 1000058842,
-         "name": "Hartlepool United"
+         "name": "Arsenal FC"
       }
    ],
    "path": [
@@ -44,7 +44,7 @@
          "termKey": "league_two"
       }
    ],
-   "englishName": "Accrington Stanley - Hartlepool United",
+   "englishName": "Manchester City - Arsenal FC",
    "state": "NOT_STARTED",
    "groupSortOrder": 2009007000000000000,
    "statistics": {
@@ -156,6 +156,241 @@
             }
          ]
       },
-      "leagueTable": ""
+      "leagueTable": {
+         "formatVersion": 1,
+         "columnLabels": {
+            "position": "Pos",
+            "participantName": "Club",
+            "gamesPlayed": "P",
+            "wins": "W",
+            "draws": "D",
+            "losses": "L",
+            "goalsFor": "Gf",
+            "goalsAgainst": "Ga",
+            "points": "Pts"
+         },
+         "leagueTableRows": [
+            {
+               "position": 1,
+               "participantName": "Manchester City",
+               "gamesPlayed": 6,
+               "wins": 5,
+               "draws": 0,
+               "losses": 1,
+               "goalsFor": 13,
+               "goalsAgainst": 2,
+               "points": 15
+            },
+            {
+               "position": 2,
+               "participantName": "Manchester Utd",
+               "gamesPlayed": 6,
+               "wins": 4,
+               "draws": 1,
+               "losses": 1,
+               "goalsFor": 9,
+               "goalsAgainst": 5,
+               "points": 13
+            },
+            {
+               "position": 3,
+               "participantName": "West Ham Utd",
+               "gamesPlayed": 6,
+               "wins": 4,
+               "draws": 0,
+               "losses": 2,
+               "goalsFor": 13,
+               "goalsAgainst": 7,
+               "points": 12
+            },
+            {
+               "position": 4,
+               "participantName": "Leicester City",
+               "gamesPlayed": 6,
+               "wins": 3,
+               "draws": 3,
+               "losses": 0,
+               "goalsFor": 13,
+               "goalsAgainst": 9,
+               "points": 12
+            },
+            {
+               "position": 5,
+               "participantName": "Arsenal FC",
+               "gamesPlayed": 6,
+               "wins": 3,
+               "draws": 1,
+               "losses": 2,
+               "goalsFor": 5,
+               "goalsAgainst": 5,
+               "points": 10
+            },
+            {
+               "position": 6,
+               "participantName": "Everton FC",
+               "gamesPlayed": 6,
+               "wins": 2,
+               "draws": 3,
+               "losses": 1,
+               "goalsFor": 8,
+               "goalsAgainst": 5,
+               "points": 9
+            },
+            {
+               "position": 7,
+               "participantName": "Swansea City",
+               "gamesPlayed": 6,
+               "wins": 2,
+               "draws": 3,
+               "losses": 1,
+               "goalsFor": 7,
+               "goalsAgainst": 5,
+               "points": 9
+            },
+            {
+               "position": 8,
+               "participantName": "Crystal Palace",
+               "gamesPlayed": 6,
+               "wins": 3,
+               "draws": 0,
+               "losses": 3,
+               "goalsFor": 8,
+               "goalsAgainst": 7,
+               "points": 9
+            },
+            {
+               "position": 9,
+               "participantName": "Tottenham Hotspur",
+               "gamesPlayed": 6,
+               "wins": 2,
+               "draws": 3,
+               "losses": 1,
+               "goalsFor": 5,
+               "goalsAgainst": 4,
+               "points": 9
+            },
+            {
+               "position": 10,
+               "participantName": "Watford FC",
+               "gamesPlayed": 6,
+               "wins": 2,
+               "draws": 3,
+               "losses": 1,
+               "goalsFor": 5,
+               "goalsAgainst": 5,
+               "points": 9
+            },
+            {
+               "position": 11,
+               "participantName": "Norwich City",
+               "gamesPlayed": 6,
+               "wins": 2,
+               "draws": 2,
+               "losses": 2,
+               "goalsFor": 9,
+               "goalsAgainst": 10,
+               "points": 8
+            },
+            {
+               "position": 12,
+               "participantName": "West Bromwich Albion",
+               "gamesPlayed": 6,
+               "wins": 2,
+               "draws": 2,
+               "losses": 2,
+               "goalsFor": 4,
+               "goalsAgainst": 6,
+               "points": 8
+            },
+            {
+               "position": 13,
+               "participantName": "Liverpool FC",
+               "gamesPlayed": 6,
+               "wins": 2,
+               "draws": 2,
+               "losses": 2,
+               "goalsFor": 4,
+               "goalsAgainst": 7,
+               "points": 8
+            },
+            {
+               "position": 14,
+               "participantName": "Bournemouth AFC",
+               "gamesPlayed": 6,
+               "wins": 2,
+               "draws": 1,
+               "losses": 3,
+               "goalsFor": 8,
+               "goalsAgainst": 9,
+               "points": 7
+            },
+            {
+               "position": 15,
+               "participantName": "Chelsea FC",
+               "gamesPlayed": 6,
+               "wins": 2,
+               "draws": 1,
+               "losses": 3,
+               "goalsFor": 9,
+               "goalsAgainst": 12,
+               "points": 7
+            },
+            {
+               "position": 16,
+               "participantName": "Southampton FC",
+               "gamesPlayed": 6,
+               "wins": 1,
+               "draws": 3,
+               "losses": 2,
+               "goalsFor": 7,
+               "goalsAgainst": 8,
+               "points": 6
+            },
+            {
+               "position": 17,
+               "participantName": "Aston Villa",
+               "gamesPlayed": 6,
+               "wins": 1,
+               "draws": 1,
+               "losses": 4,
+               "goalsFor": 6,
+               "goalsAgainst": 9,
+               "points": 4
+            },
+            {
+               "position": 18,
+               "participantName": "Stoke City",
+               "gamesPlayed": 6,
+               "wins": 0,
+               "draws": 3,
+               "losses": 3,
+               "goalsFor": 5,
+               "goalsAgainst": 9,
+               "points": 3
+            },
+            {
+               "position": 19,
+               "participantName": "Newcastle Utd",
+               "gamesPlayed": 6,
+               "wins": 0,
+               "draws": 2,
+               "losses": 4,
+               "goalsFor": 3,
+               "goalsAgainst": 9,
+               "points": 2
+            },
+            {
+               "position": 20,
+               "participantName": "Sunderland AFC",
+               "gamesPlayed": 6,
+               "wins": 0,
+               "draws": 2,
+               "losses": 4,
+               "goalsFor": 6,
+               "goalsAgainst": 13,
+               "points": 2
+            }
+         ]
+      }
    }
 }

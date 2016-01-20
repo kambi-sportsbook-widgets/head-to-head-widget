@@ -129,7 +129,7 @@
                <!--Home team-->
                <div class="kw-performance-points l-flexed l-flexbox l-mr-5">
                   <div style="width: {{ performance_home_total / performance_total * 100 | number: 1 }}%"
-                     class="l-flexbox">
+                       class="l-flexbox">
                   </div>
                </div>
 
@@ -142,6 +142,36 @@
             </div>
 
          </div>
+      </div>
+
+      <!--League table-->
+      <div ng-if="defaultArgs.enabled.leagueTable" class="l-pt-10">
+
+         <h4 class="l-flexbox l-pack-center l-mb-5">
+            <strong class="l-flexbox l-pack-center l-mr-10">{{ 'League Table' | translate }}</strong>
+         </h4>
+
+         <div class="" ><!--Table header-->
+            <div class="kw-table-header kw-border-bottom l-flexbox l-horizontal l-align-center l-pl-15 l-pr-15">
+               <div data-item-attr="{{headerKey}}"
+                    title="{{bodyKey}}"
+                    class="l-flex-1 text-truncate"
+                    ng-repeat="(headerKey, headerValue) in columnLabels">{{headerValue}}
+               </div>
+            </div>
+
+            <!--Competitors table body-->
+            <div class="kw-table-item l-flexbox l-horizontal l-align-center l-pl-15 l-pr-15 "
+                 ng-if="leagueTableRow.participantName === data.homeName || leagueTableRow.participantName === data.awayName"
+                 ng-repeat="leagueTableRow in leagueTableRows">
+               <div data-item-attr="{{bodyKey}}" title="{{bodyKey}}"
+                    class="l-flex-1"
+                    ng-class="{'text-truncate': bodyValue.length > 20}"
+                    ng-repeat="(bodyKey, bodyValue) in leagueTableRow">{{bodyValue}}
+               </div>
+            </div>
+         </div>
+
       </div>
 
    </main>

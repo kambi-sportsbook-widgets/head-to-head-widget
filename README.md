@@ -1,4 +1,4 @@
-# head-tp-head-widget
+# head-to-head-widget
 
 Displays the head to head stats for a given event
 

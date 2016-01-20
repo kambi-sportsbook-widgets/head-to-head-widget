@@ -100,3 +100,41 @@
       }
    }
 }
+
+.kw-table-header {
+   color: $color-4-2-card-supportive-text;
+   font-size: 12px;
+   min-height: 35px;
+
+   [data-item-attr="position"] {
+      visibility: hidden;
+   }
+
+   [data-item-attr="participantName"] {
+      @include flex(7);
+   }
+
+}
+
+.kw-table-item {
+   border-bottom: 1px solid $color-4-1-card-border;
+   height: 35px;
+
+   &:hover {
+      background-color: $color-4-1-card-background-hover;
+   }
+
+   &:last-child {
+      border-bottom: 0;
+   }
+}
+
+.kw-table-item {
+   [data-item-attr="position"] {
+      color: $color-4-2-card-supportive-text;
+   }
+
+   [data-item-attr="participantName"] {
+      @include flex(7);
+   }
+}
