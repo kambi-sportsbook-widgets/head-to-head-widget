@@ -26,7 +26,7 @@
                 * Keep the height to 0 until we get data
                 * @type {number}
                 */
-               $scope.defaultHeight = 750;
+               $scope.defaultHeight = 700;
 
                // percentage of the Widget height minus the header
                $scope.circle_height = ($scope.defaultHeight - 40) * $scope.defaultArgs.history_height;
