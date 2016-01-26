@@ -1,5 +1,6 @@
 (function () {
-   var gulp, exec, rename, concat, uglify, jshint, stripDebug, del, sourcemaps, minifycss, htmlReplace, sass, buildTemp, install, npmLibs, awspublish, jsonminify;
+   var gulp, exec, rename, concat, uglify, jshint, stripDebug, del, sourcemaps, minifycss, htmlReplace, sass, buildTemp,
+      install, npmLibs, awspublish, jsonminify, gulpFile, path, foreach, json_merger;
 
    gulp = require('gulp-help')(require('gulp'));
 
@@ -31,6 +32,14 @@
 
    jsonminify = require('gulp-jsonminify');
 
+   path = require('path');
+
+   gulpFile = require('gulp-file');
+
+   foreach = require('gulp-foreach');
+
+   json_merger = require('json_merger');
+
    buildTemp = '.buildTemp';
 
    npmLibs = [
@@ -38,7 +47,7 @@
       './node_modules/kambi-sportsbook-widget-core-translate/dist/translate.js'
    ];
 
-   gulp.task('default', 'Builds the app including it\'s libraries and outputs it to the dist directory', ['build', 'clean-build'], function(){
+   gulp.task('default', 'Builds the app including it\'s libraries and outputs it to the dist directory', ['build', 'clean-build'], function () {
       del.sync(buildTemp);
    });
 
@@ -70,13 +79,18 @@
          .pipe(install());
    });
 
+   gulp.task('mock-data', false, function () {
+      return gulp.src('src/statistics.json')
+         .pipe(gulp.dest('./dist/'));
+   });
+
    gulp.task('npm-build', false, ['npm-install'], function () {
       return gulp.src(npmLibs)
          .pipe(concat('libs.js'))
          .pipe(gulp.dest('./' + buildTemp + '/js'));
    });
 
-   gulp.task('build', false, ['js-concat', 'css', 'translations'], function () {
+   gulp.task('build', false, ['js-concat', 'css', 'translations', 'mock-data'], function () {
       return gulp.src('./src/index.html')
          .pipe(htmlReplace({
             css: 'css/app.min.css',
@@ -103,7 +117,7 @@
          .pipe(gulp.dest('./dist/js'));
    });
 
-   gulp.task('watch-scss', 'Starts a watcher for .scss files and compiles them when changed', function(){
+   gulp.task('watch-scss', 'Starts a watcher for .scss files and compiles them when changed', function () {
       gulp.watch('./src/scss/**/*.scss', ['scss']);
    });
 
@@ -138,13 +152,13 @@
          .pipe(awspublish.reporter());
    });
 
-   gulp.task('docs', function(cb){
-      exec('npm run grunt', function (err, stdout, stderr) {
+   gulp.task('docs', function ( cb ) {
+      exec('npm run grunt', function ( err, stdout, stderr ) {
          console.log(err);
          console.log(stdout);
          console.log(stderr);
 
-         exec('npm run kss', function (err, stdout, stderr) {
+         exec('npm run kss', function ( err, stdout, stderr ) {
             console.log(err);
             console.log(stdout);
             console.log(stderr);
@@ -152,10 +166,25 @@
       });
    });
 
-   gulp.task('translations', function(){
+   gulp.task('translations', function () {
       return gulp.src('./src/i18n/*.json')
-         .pipe(jsonminify())
-         .pipe(gulp.dest('./dist/i18n/'));
+         .pipe(foreach(function ( stream, file ) {
+            var name = path.basename(file.path);
+            var filePath = file.cwd + '/node_modules/kambi-sportsbook-widget-core-translate/dist/i18n/' + name;
+            var srcJson = JSON.parse(file.contents.toString());
+            var coreJson = json_merger.fromFile(filePath);
+            var result = extendObj(srcJson, coreJson);
+            gulpFile(name, JSON.stringify(result), { src: true })
+               .pipe(gulp.dest('dist/i18n'));
+            return stream;
+         }));
    });
+
+   function extendObj( obj, src ) {
+      Object.keys(src).forEach(function ( key ) {
+         obj[key] = src[key];
+      });
+      return obj;
+   }
 
 }).call(this);
