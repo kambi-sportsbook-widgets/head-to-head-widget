@@ -53,6 +53,12 @@
    "node": true,
    "devel": true,
    "globals": {
-      "angular": false
+      "angular": false,
+      "$": false,
+      "Ext": false,
+      "MobileDetect": true,
+      "FastClick": true,
+      "FB": true,
+      "addToHomeScreen": true
    }
 }

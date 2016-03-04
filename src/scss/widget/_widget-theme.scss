@@ -1,139 +1,53 @@
+$table-border: 1px solid darken($color-4-1-card-border, 20%);
 
 .kw-main {
    height: 100%;
 }
 
-.kw-border-bottom {
-   border-bottom: 1px solid $color-4-1-card-border;
-}
-
-.kw-history {
-
-   > div {
-
-      .kw-history-circle {
-         @include text-shadow(1px 1px 0 rgba(0, 0, 0, 0.16));
-         background-color: $color-2-2-primary-background;
-         color: white;
-         @include border-radius(200px);
-         font-size: 16px;
-         font-weight: 600;
-         height: 0;
-         line-height: 1.2;
-         width: 0;
-      }
-
-      &:last-child {
-         .kw-history-circle {
-            background-color: darken($color-2-2-primary-background, 3%);
-         }
-      }
-   }
-}
-
-.kw-last-meetings {
-   @include text-shadow(1px 1px 0 rgba(0, 0, 0, 0.16));
-
-   .kw-last-meeting {
-      @include border-radius(3px);
-      background-color: $color-4-1-card-border;
-
-      div {
-         position: relative;
-
-         &:first-child {
-            .kw-stat-bar {
-               @include border-radius(3px 0 0 3px);
-            }
-         }
-
-         &:last-child {
-            .kw-stat-bar {
-               @include border-radius(0 3px 3px 0);
-               background-color: darken($color-2-2-primary-background, 3%);
-            }
-         }
-      }
-
-      .kw-stat-bar {
-         background-color: $color-2-2-primary-background;
-         @include transition(width .3s ease-out);
-         color: white;
-         min-height: 20px;
-         min-width: 20px;
-         width: 0;
-      }
-   }
-}
-
-.kw-performance {
-
-   .kw-performance-tendency {
-      border: 1px solid $color-4-1-card-background;
-      color: white;
-      min-width: 15px;
-      text-align: center;
-      @include text-shadow(1px 1px 0 rgba(0, 0, 0, 0.16));
-   }
-
-   .tendency-W {
-      background-color: lighten($color-2-2-primary-background, 10%);
-   }
-
-   .tendency-D {
-      background-color: $color-2-2-primary-background;
-   }
-
-   .tendency-L {
-      background-color: darken($color-2-2-primary-background, 10%);
-   }
-
-   .kw-performance-points {
-      background-color: $color-4-1-card-border;
-
-      div {
-         background-color: $color-2-2-primary-background;
-         @include transition(width .3s ease-out);
-         min-height: 5px;
-         width: 0;
-      }
-   }
-}
-
-.kw-table-header {
-   color: $color-4-2-card-supportive-text;
-   font-size: 12px;
-   min-height: 35px;
-
-   [data-item-attr="position"] {
-      visibility: hidden;
-   }
-
-   [data-item-attr="participantName"] {
-      @include flex(7);
-   }
-
-}
-
-.kw-table-item {
-   border-bottom: 1px solid $color-4-1-card-border;
+[data-item-attr="home"], [data-item-attr="away"] {
    height: 35px;
+}
 
-   &:hover {
-      background-color: $color-4-1-card-background-hover;
-   }
+.kw-teams {
+   font-size: 16px;
+   border-top: $table-border;
+   border-bottom: $table-border;
 
-   &:last-child {
-      border-bottom: 0;
+   [data-item-attr="home"] {
+      border-right: $table-border;
    }
 }
 
 .kw-table-item {
-   [data-item-attr="position"] {
-      color: $color-4-2-card-supportive-text;
+   border-bottom: $table-border;
+
+   [data-item-attr="home"] {
+      border-right: $table-border;
+      @include box-orient(row-reverse);
+   }
+}
+
+.kw-table-item {
+   font-size: 14px;
+   background-color: $color-4-1-card-background-hover;
+   .kw-bar-zero {
+      width: 15px;
+      background-color: $zero-color;
    }
 
-   [data-item-attr="participantName"] {
-      @include flex(7);
+   [data-item-attr="home"] .kw-bar-score {
+      background-color: $home-color;
+   }
+
+   [data-item-attr="away"] .kw-bar-score {
+      background-color: $away-color;
+   }
+
+   .kw-bar-empty {
+      background-color: rgba(0,0,0,0);
+   }
+
+   [data-item-attr="away"] .kw-bar-wrapper {
+      @include box-orient(row-reverse);
    }
 }

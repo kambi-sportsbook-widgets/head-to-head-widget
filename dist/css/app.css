@@ -73,6 +73,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .kw-btn:hover, .kw-event-outcome:hover {
   cursor: pointer;
 }
+.kw-btn.disabled, .disabled.kw-event-outcome {
+  background-color: #f6f6f6;
+}
+.kw-btn.disabled:hover, .disabled.kw-event-outcome:hover {
+  cursor: not-allowed;
+  background-color: #f6f6f6;
+}
 
 .l-flexbox {
   display: -webkit-box;
@@ -782,129 +789,56 @@ h4 span {
   height: 100%;
 }
 
-.kw-border-bottom {
-  border-bottom: 1px solid #EAEAEA;
+[data-item-attr="home"], [data-item-attr="away"] {
+  height: 35px;
 }
 
-.kw-history > div .kw-history-circle {
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.16);
-  background-color: #00c1de;
-  color: white;
-  -moz-border-radius: 200px;
-  -webkit-border-radius: 200px;
-  border-radius: 200px;
+.kw-teams {
   font-size: 16px;
-  font-weight: 600;
-  height: 0;
-  line-height: 1.2;
-  width: 0;
+  border-top: 1px solid #b7b7b7;
+  border-bottom: 1px solid #b7b7b7;
 }
-.kw-history > div:last-child .kw-history-circle {
-  background-color: #00b4cf;
-}
-
-.kw-last-meetings {
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.16);
-}
-.kw-last-meetings .kw-last-meeting {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #EAEAEA;
-}
-.kw-last-meetings .kw-last-meeting div {
-  position: relative;
-}
-.kw-last-meetings .kw-last-meeting div:first-child .kw-stat-bar {
-  -moz-border-radius: 3px 0 0 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px 0 0 3px;
-}
-.kw-last-meetings .kw-last-meeting div:last-child .kw-stat-bar {
-  -moz-border-radius: 0 3px 3px 0;
-  -webkit-border-radius: 0;
-  border-radius: 0 3px 3px 0;
-  background-color: #00b4cf;
-}
-.kw-last-meetings .kw-last-meeting .kw-stat-bar {
-  background-color: #00c1de;
-  -moz-transition: width 0.3s ease-out;
-  -o-transition: width 0.3s ease-out;
-  -webkit-transition: width 0.3s ease-out;
-  transition: width 0.3s ease-out;
-  color: white;
-  min-height: 20px;
-  min-width: 20px;
-  width: 0;
-}
-
-.kw-performance .kw-performance-tendency {
-  border: 1px solid #f6f6f6;
-  color: white;
-  min-width: 15px;
-  text-align: center;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.16);
-}
-.kw-performance .tendency-W {
-  background-color: #12e0ff;
-}
-.kw-performance .tendency-D {
-  background-color: #00c1de;
-}
-.kw-performance .tendency-L {
-  background-color: #0095ab;
-}
-.kw-performance .kw-performance-points {
-  background-color: #EAEAEA;
-}
-.kw-performance .kw-performance-points div {
-  background-color: #00c1de;
-  -moz-transition: width 0.3s ease-out;
-  -o-transition: width 0.3s ease-out;
-  -webkit-transition: width 0.3s ease-out;
-  transition: width 0.3s ease-out;
-  min-height: 5px;
-  width: 0;
-}
-
-.kw-table-header {
-  color: #999;
-  font-size: 12px;
-  min-height: 35px;
-}
-.kw-table-header [data-item-attr="position"] {
-  visibility: hidden;
-}
-.kw-table-header [data-item-attr="participantName"] {
-  -webkit-box-flex: 7;
-  -webkit-flex: 7;
-  -moz-box-flex: 7;
-  -moz-flex: 7;
-  -ms-flex: 7;
-  flex: 7;
+.kw-teams [data-item-attr="home"] {
+  border-right: 1px solid #b7b7b7;
 }
 
 .kw-table-item {
-  border-bottom: 1px solid #EAEAEA;
-  height: 35px;
+  border-bottom: 1px solid #b7b7b7;
 }
-.kw-table-item:hover {
-  background-color: #f0f0f0;
-}
-.kw-table-item:last-child {
-  border-bottom: 0;
+.kw-table-item [data-item-attr="home"] {
+  border-right: 1px solid #b7b7b7;
+  -webkit-box-direction: reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row-reverse;
+  -moz-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
-.kw-table-item [data-item-attr="position"] {
-  color: #999;
+.kw-table-item {
+  font-size: 14px;
+  background-color: #f0f0f0;
 }
-.kw-table-item [data-item-attr="participantName"] {
-  -webkit-box-flex: 7;
-  -webkit-flex: 7;
-  -moz-box-flex: 7;
-  -moz-flex: 7;
-  -ms-flex: 7;
-  flex: 7;
+.kw-table-item .kw-bar-zero {
+  width: 15px;
+  background-color: #D2D0D0;
+}
+.kw-table-item [data-item-attr="home"] .kw-bar-score {
+  background-color: #EB4127;
+}
+.kw-table-item [data-item-attr="away"] .kw-bar-score {
+  background-color: #15BC00;
+}
+.kw-table-item .kw-bar-empty {
+  background-color: transparent;
+}
+.kw-table-item [data-item-attr="away"] .kw-bar-wrapper {
+  -webkit-box-direction: reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row-reverse;
+  -moz-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 

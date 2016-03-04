@@ -1,9 +1,10 @@
-npm-debug.log
 .idea
 node_modules
 .awspublish-*
 .buildTemp
+.compiledTemp
 .sass-cache/
 docs
 *.map
 bower_components
+/.project
