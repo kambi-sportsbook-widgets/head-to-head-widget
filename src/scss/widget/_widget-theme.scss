@@ -10,10 +10,8 @@ $table-border: 1px solid darken($color-4-1-card-border, 5%);
 
 .kw-teams {
    font-size: 14px;
-   // border-top: $table-border;
    border-bottom: 1px solid $color-4-1-card-border;
    background-color: white;
-
    [data-item-attr="home"] {
       border-right: 1px solid $color-4-1-card-border;
    }
@@ -21,7 +19,6 @@ $table-border: 1px solid darken($color-4-1-card-border, 5%);
 
 .kw-table-item {
    border-bottom: $table-border;
-
    [data-item-attr="home"] {
       border-right: $table-border;
       @include box-orient(row-reverse);
@@ -31,23 +28,18 @@ $table-border: 1px solid darken($color-4-1-card-border, 5%);
 .kw-table-item {
    font-size: 14px;
    background-color: $color-4-1-card-background;
-
    .drawn-game .kw-bar-score {
       background-color: $drawn-color;
    }
-
    .won-game .kw-bar-score {
       background-color: $won-color;
    }
-
    .lost-game .kw-bar-score {
       background-color: $lost-color;
    }
-
    .kw-bar-empty {
       background-color: rgba(0,0,0,0);
    }
-
    [data-item-attr="away"] .kw-bar-wrapper {
       @include box-orient(row-reverse);
    }

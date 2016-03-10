@@ -5,9 +5,7 @@
    // WidgetCore provides common functions like setting up the widget with the api configuration
    arrDependencies = [
       'widgetCore',
-      'widgetCore.translate',
-      'ngStorage',
-      'ngAnimate'
+      'widgetCore.translate'
    ];
 
    (function ($app) {
@@ -23,8 +21,8 @@
 
    (function ($app) {
       return $app.controller('appController',
-         ['$scope', '$controller', '$http', '$localStorage', 'kambiAPIService', 'kambiWidgetService', '$timeout',
-            function ($scope, $controller, $http, $localStorage, kambiAPIService, kambiWidgetService, $timeout) {
+         ['$scope', '$controller', '$http', 'kambiAPIService', 'kambiWidgetService', '$timeout',
+            function ($scope, $controller, $http, kambiAPIService, kambiWidgetService, $timeout) {
 
                angular.extend(this, $controller('widgetCoreController', {
                   '$scope': $scope

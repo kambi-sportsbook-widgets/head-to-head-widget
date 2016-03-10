@@ -5,9 +5,7 @@
    // WidgetCore provides common functions like setting up the widget with the api configuration
    arrDependencies = [
       'widgetCore',
-      'widgetCore.translate',
-      'ngStorage',
-      'ngAnimate'
+      'widgetCore.translate'
    ];
 
    (function ($app) {
