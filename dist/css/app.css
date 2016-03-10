@@ -794,19 +794,19 @@ h4 span {
 }
 
 .kw-teams {
-  font-size: 16px;
-  border-top: 1px solid #b7b7b7;
-  border-bottom: 1px solid #b7b7b7;
+  font-size: 14px;
+  border-bottom: 1px solid #EAEAEA;
+  background-color: white;
 }
 .kw-teams [data-item-attr="home"] {
-  border-right: 1px solid #b7b7b7;
+  border-right: 1px solid #EAEAEA;
 }
 
 .kw-table-item {
-  border-bottom: 1px solid #b7b7b7;
+  border-bottom: 1px solid #dddddd;
 }
 .kw-table-item [data-item-attr="home"] {
-  border-right: 1px solid #b7b7b7;
+  border-right: 1px solid #dddddd;
   -webkit-box-direction: reverse;
   -webkit-box-orient: horizontal;
   -webkit-flex-direction: row-reverse;
@@ -817,17 +817,16 @@ h4 span {
 
 .kw-table-item {
   font-size: 14px;
-  background-color: #f0f0f0;
+  background-color: #f6f6f6;
 }
-.kw-table-item .kw-bar-zero {
-  width: 15px;
+.kw-table-item .drawn-game .kw-bar-score {
   background-color: #D2D0D0;
 }
-.kw-table-item [data-item-attr="home"] .kw-bar-score {
-  background-color: #EB4127;
-}
-.kw-table-item [data-item-attr="away"] .kw-bar-score {
+.kw-table-item .won-game .kw-bar-score {
   background-color: #15BC00;
+}
+.kw-table-item .lost-game .kw-bar-score {
+  background-color: #EB4127;
 }
 .kw-table-item .kw-bar-empty {
   background-color: transparent;

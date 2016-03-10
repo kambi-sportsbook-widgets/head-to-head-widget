@@ -56,23 +56,23 @@
          },
          {
             "id": 2,
-            "homeScore": 1,
+            "homeScore": 3,
             "awayScore": 1
          },
          {
             "id": 3,
             "homeScore": 1,
-            "awayScore": 2
+            "awayScore": 1
          },
          {
             "id": 4,
             "homeScore": 2,
-            "awayScore": 1
+            "awayScore": 2
          },
          {
             "id": 5,
-            "homeScore": 0,
-            "awayScore": 3
+            "homeScore": 3,
+            "awayScore": 2
          }
       ],
       "history": {

@@ -60,8 +60,13 @@
             <div class="kw-score l-flexbox l-align-center l-mr-6 l-ml-12">
                {{stat.homeScore}}
             </div>
-            <div class="kw-score-zero kw-bar-zero l-flexbox l-m-6" ng-if="stat.homeScore === 0"></div>
-            <div class="l-flexbox kw-bar-wrapper l-flex-1 l-m-6" ng-if="stat.homeScore !== 0">
+            <div class="l-flexbox kw-bar-wrapper drawn-game l-flex-1 l-m-6" ng-if="stat.homeScore === stat.awayScore">
+               <div class="kw-bar-empty l-flexbox" style="flex: {{ meetings_max - stat.homeScore }}">
+               </div>
+               <div class="kw-bar-score l-flexbox" style="flex: {{ stat.homeScore }}">
+               </div>
+            </div>
+            <div class="l-flexbox kw-bar-wrapper l-flex-1 l-m-6" ng-class="stat.homeScore > stat.awayScore ? 'won-game' : 'lost-game'" ng-if="stat.homeScore !== stat.awayScore">
                <div class="kw-bar-empty l-flexbox" style="flex: {{ meetings_max - stat.homeScore }}">
                </div>
                <div class="kw-bar-score l-flexbox" style="flex: {{ stat.homeScore }}">
@@ -72,8 +77,13 @@
             <div class="kw-score l-flexbox l-align-center l-mr-6 l-ml-12">
                {{stat.awayScore}}
             </div>
-            <div class="kw-score-zero kw-bar-zero l-flexbox l-m-6" ng-if="stat.awayScore === 0"></div>
-            <div class="l-flexbox kw-bar-wrapper l-flex-1 l-m-6" ng-if="stat.awayScore !== 0">
+            <div class="l-flexbox kw-bar-wrapper drawn-game l-flex-1 l-m-6" ng-if="stat.homeScore === stat.awayScore">
+               <div class="kw-bar-empty l-flexbox" style="flex: {{ meetings_max - stat.homeScore }}">
+               </div>
+               <div class="kw-bar-score l-flexbox" style="flex: {{ stat.homeScore }}">
+               </div>
+            </div>
+            <div class="l-flexbox kw-bar-wrapper l-flex-1 l-m-6" ng-class="stat.homeScore < stat.awayScore ? 'won-game' : 'lost-game'" ng-if="stat.homeScore !== stat.awayScore">
                <div class="kw-bar-empty l-flexbox" style="flex: {{ meetings_max - stat.awayScore }}">
                </div>
                <div class="kw-bar-score l-flexbox" style="flex: {{ stat.awayScore }}">
