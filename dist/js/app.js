@@ -45,6 +45,9 @@
                 */
                $scope.defaultHeight = 37 + 36 * 6;
 
+               // Resizing the widget to the defaultHeight
+               $scope.setWidgetHeight = $scope.defaultHeight;
+
                // Percentage of the Widget height minus the header
                $scope.circle_height = ($scope.defaultHeight - 40) * $scope.defaultArgs.history_height;
 
