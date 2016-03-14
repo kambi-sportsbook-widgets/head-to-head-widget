@@ -8,3 +8,5 @@ docs
 *.map
 bower_components
 /.project
+src/mockSetupData.json
+dist/mockSetupData.json
