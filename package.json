@@ -1,10 +1,10 @@
 {
    "name": "head-to-head-widget",
-   "version": "0.2.0",
+   "version": "0.2.1",
    "description": "Head to Head Widget",
    "main": "dist/index.html",
    "scripts": {
-      "changelog" : "changelog kambi-sportsbook-widgets/head-to-head-widget all -m > CHANGELOG.md",
+      "changelog": "changelog kambi-sportsbook-widgets/head-to-head-widget all -m > CHANGELOG.md",
       "test": "echo \"Error: no test specified\" && exit 1"
    },
    "devDependencies": {
