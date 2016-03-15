@@ -1,6 +1,6 @@
 # head-to-head-widget
 
-Displays the head to head stats for a given event
+Displays the meetup history of two teams
 
 ## Configuration example:
 
@@ -13,13 +13,17 @@ __`client-widgets.js`__
     "order": 1,
     "widgetId": "Event poll widget",
     "args": {
+        "offering": "offering",
+        "historyLimit": 6
     }
 },
 ...
 
 ```
 
-### The widget accepts the following parameter/s:
+### The widget accepts the following arguments/s:
+1. `offering` - string - __REQUIRED__ - The offering provided by Kambi
+2. `historyLimit` - integer - defaults to 6 - The max amount of items to show in the meetup history
 
 # Other tools
 

@@ -55,7 +55,7 @@
             {{data.awayName}}
          </div>
       </div>
-      <div class="kw-table-item l-flexbox l-flex-1" ng-repeat="stat in data.statistics.lastMeetings">
+      <div class="kw-table-item l-flexbox l-flex-1" ng-repeat="stat in data.statistics.lastMeetings | limitTo: args.historyLimit">
          <div data-item-attr="home" class="l-flexbox l-flex-1 l-p-6">
             <div class="kw-score l-flexbox l-align-center l-mr-6 l-ml-12">
                {{stat.homeScore}}
