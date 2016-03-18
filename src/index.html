@@ -1,10 +1,10 @@
 <!doctype html>
-<html ng-app="headToHeadWidget">
+<html>
 <head>
    <title>Head to head</title>
    <meta charset="UTF-8">
    <meta name="apple-mobile-web-app-title" content="Kambi">
-   <meta name="description" content="Kambi Sportsbook Head to Head widget">
+   <meta name="description" content="Head to Head widget">
    <meta name="HandheldFriendly" content="True">
    <meta name="MobileOptimized" content="320">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
@@ -16,7 +16,6 @@
    <meta name="apple-mobile-web-app-status-bar-style" content="black">
    <meta name="apple-mobile-web-app-title" content="">
 
-   <!-- Include some fonts/iconfonts that we want to use -->
    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500"/>
    <link rel="stylesheet" type="text/css" href="//kambi-cdn.globalmouth.com/lib/dist/css/app-base-all.css"/>
    <link rel="stylesheet" type="text/css" href="//kambi-cdn.globalmouth.com/lib/dist/css/widgets.css"/>
@@ -26,27 +25,19 @@
    <link rel="stylesheet" type="text/css" href="css/app.css"/>
    <!-- endbuild -->
 
-   <!-- Include angular and the the Kambi widget api -->
-   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.min.js"></script>
-
-   <!-- build:js -->
-   <!-- This section will be replaced in the gulp build process -->
-   <script src="js/app.js"></script>
-   <script src="js/controllers/appController.js"></script>
-   <!-- endbuild -->
+   <script src='//cdnjs.cloudflare.com/ajax/libs/rivets/0.8.1/rivets.bundled.min.js'></script>
+   <script src='//cdnjs.cloudflare.com/ajax/libs/stapes/0.8.1/stapes.min.js'></script>
+   <script src='//cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.1/es6-promise.min.js'></script>
+   <script src='//cdnjs.cloudflare.com/ajax/libs/fetch/0.11.0/fetch.min.js'></script>
 
    <!-- build:corelib -->
    <!-- This section will be replaced in the gulp build process -->
-   <script src="../node_modules/kambi-sportsbook-widget-library/src/js/controllers/widgetCoreController.js"></script>
-   <script src="../node_modules/kambi-sportsbook-widget-library/src/js/services/kambiWidgetService.js"></script>
-   <script src="../node_modules/kambi-sportsbook-widget-library/src/js/services/kambiAPIService.js"></script>
-   <script src="../node_modules/kambi-sportsbook-widget-library/src/js/services/coreUtilsService.js"></script>
+   <!-- TODO -->
    <!-- endbuild -->
 
    <!-- build:translate -->
    <!-- This section will be replaced in the gulp build process -->
-   <script src="../node_modules/kambi-sportsbook-widget-core-translate/dist/translate.js"></script>
+   <!-- TODO -->
    <!-- endbuild -->
 
    <!-- build:kambi-widget-api -->
@@ -57,10 +48,8 @@
 
 <body class="kw-body">
 <div class="KambiWidget-card-background-color KambiWidget-card-text-color KambiWidget-card-background-color--hoverable l-flexbox l-vertical l-expander" ng-controller="appController" ng-cloak>
-
    <!--Header-->
    <header class="KambiWidget-header kw-header l-flexbox l-pl-16">Head to Head</header>
-
    <!--Main-->
    <main class="kw-main l-flexbox l-vertical l-flex-1">
       <div class="kw-teams l-flexbox l-flex-1">
@@ -110,7 +99,16 @@
             </div>
          </div>
    </main>
-
 </div>
+
+<!-- build:js -->
+<!-- This section will be replaced in the gulp build process -->
+<script src="js/lib/coreLibrary.js"></script>
+<script src="js/lib/widgetModule.js"></script>
+<script src="js/lib/offeringModule.js"></script>
+<script src="js/lib/statisticsModule.js"></script>
+<script src="js/app.js"></script>
+<!-- endbuild -->
+
 </body>
 </html>

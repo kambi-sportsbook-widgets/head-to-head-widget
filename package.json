@@ -13,13 +13,13 @@
       "require-dir": "^0.3.0",
       "kambi-sportsbook-widget-core-translate": "git+ssh://git@github.com/kambi-sportsbook-widgets/widget-core-translate.git",
       "kambi-sportsbook-widget-library": "git+ssh://git@github.com/kambi-sportsbook-widgets/widget-library.git",
-      "widget-build-tools": "git+ssh://git@github.com:kambi-sportsbook-widgets/widget-build-tools.git"
+      "widget-build-tools": "git+ssh://git@github.com:kambi-sportsbook-widgets/widget-build-tools.git",
+      "widget-aws-publish-tools": "git+ssh://git@bitbucket.org:globalmouth/widget-aws-publish-tools.git"
    },
    "repository": {
       "type": "git",
       "url": "git+ssh://git@github.com/kambi-sportsbook-widgets/head-to-head-widget.git"
    },
-   "author": "andrei@globalmouth.com",
    "license": "ISC",
    "bugs": {
       "url": "https://github.com/kambi-sportsbook-widgets/head-to-head-widget/issues"
