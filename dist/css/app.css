@@ -123,8 +123,17 @@ h4 span {
   height: 100%;
 }
 
+#main {
+  position: relative;
+  height: 100%;
+}
+
 [data-item-attr="home"], [data-item-attr="away"] {
   height: 35px;
+}
+
+.kw-icon {
+  width: 35px;
 }
 
 .kw-teams {
