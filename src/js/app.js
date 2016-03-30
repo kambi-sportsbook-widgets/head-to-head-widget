@@ -30,6 +30,23 @@
             console.trace(error);
          });
 
+         // Formaters and binders for comparison, operation and style
+         rivets.formatters['='] = function (value, args) {
+            return value === args;
+         };
+         rivets.formatters['>'] = function (value, arg) {
+            return value > arg;
+         };
+         rivets.formatters['<'] = function (value, arg) {
+            return value < arg;
+         };
+         rivets.formatters['-'] = function (value, arg) {
+            return value - arg;
+         };
+         rivets.binders['style-*'] = function (el, value) {
+            el.style.setProperty(this.args[0], value);
+         };
+
          this.view = rivets.bind(document.getElementById('main'), this.scope);
       },
 
@@ -48,6 +65,7 @@
       parseDataInfo: function ( data ) {
          var dataInfo = [];
          var lastEvents = [];
+         var allScores = [];
          var homeTeam = data.homeParticipant.participantName;
          var awayTeam = data.awayParticipant.participantName;
 
@@ -73,17 +91,29 @@
             }
 
             lastEvents.push(item);
-            return lastEvents;
          });
+
+         // Iterating through the scores and pushing them to the allScores array
+         for (var i = 0; i < data.lastEvents.length; i++) {
+            for (var j = 0; j < data.lastEvents[i].scores.length; j++) {
+               allScores.push(data.lastEvents[i].scores[j].homeScore);
+               allScores.push(data.lastEvents[i].scores[j].awayScore);
+            }
+         }
+
+         // Getting the highest value among the scores
+         var getScoresMax = function ( array ) {
+            return Math.max.apply(null, array);
+         };
 
          dataInfo.push({
             homeTeam: homeTeam,
             awayTeam: awayTeam,
-            lastEvents: lastEvents
+            lastEvents: lastEvents,
+            maxScore: getScoresMax(allScores)
          });
          return dataInfo;
       }
-
    });
 
    var HeadToHead = new HeadToHead();

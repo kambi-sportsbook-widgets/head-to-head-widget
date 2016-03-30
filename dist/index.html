@@ -56,16 +56,16 @@
             <div class="kw-score l-flexbox l-align-center l-mr-6 l-ml-12">
                {score.scoreOnLeft}
             </div>
-            <div class="l-flexbox kw-bar-wrapper drawn-game l-flex-1 l-m-6" ng-if="stat.homeScore === stat.awayScore">
-               <div class="kw-bar-empty l-flexbox" style="flex: {{ meetings_max - stat.homeScore }}">
+            <div class="l-flexbox kw-bar-wrapper drawn-game l-flex-1 l-m-6" rv-show="score.scoreOnLeft | = score.scoreOnRight">
+               <div class="kw-bar-empty l-flexbox" rv-style-flex="event.maxScore | - score.scoreOnLeft">
                </div>
-               <div class="kw-bar-score l-flexbox" style="flex: {{ stat.homeScore }}">
+               <div class="kw-bar-score l-flexbox" rv-style-flex="score.scoreOnLeft">
                </div>
             </div>
-            <div class="l-flexbox kw-bar-wrapper l-flex-1 l-m-6" ng-class="stat.homeScore > stat.awayScore ? 'won-game' : 'lost-game'" ng-if="stat.homeScore !== stat.awayScore">
-               <div class="kw-bar-empty l-flexbox" style="flex: {{ meetings_max - stat.homeScore }}">
+            <div class="l-flexbox kw-bar-wrapper l-flex-1 l-m-6" rv-class-won-game="score.scoreOnLeft | > score.scoreOnRight" rv-hide="score.scoreOnLeft | = score.scoreOnRight">
+               <div class="kw-bar-empty l-flexbox" rv-style-flex="event.maxScore | - score.scoreOnLeft">
                </div>
-               <div class="kw-bar-score l-flexbox" style="flex: {{ stat.homeScore }}">
+               <div class="kw-bar-score l-flexbox" rv-style-flex="score.scoreOnLeft">
                </div>
             </div>
          </div>
@@ -73,16 +73,16 @@
             <div class="kw-score l-flexbox l-align-center l-mr-6 l-ml-12">
                {score.scoreOnRight}
             </div>
-            <div class="l-flexbox kw-bar-wrapper drawn-game l-flex-1 l-m-6" ng-if="stat.homeScore === stat.awayScore">
-               <div class="kw-bar-empty l-flexbox" style="flex: {{ meetings_max - stat.homeScore }}">
+            <div class="l-flexbox kw-bar-wrapper drawn-game l-flex-1 l-m-6" rv-show="score.scoreOnLeft | = score.scoreOnRight">
+               <div class="kw-bar-empty l-flexbox" rv-style-flex="event.maxScore | - score.scoreOnRight">
                </div>
-               <div class="kw-bar-score l-flexbox" style="flex: {{ stat.homeScore }}">
+               <div class="kw-bar-score l-flexbox" rv-style-flex="score.scoreOnRight">
                </div>
             </div>
-            <div class="l-flexbox kw-bar-wrapper l-flex-1 l-m-6" ng-class="stat.homeScore < stat.awayScore ? 'won-game' : 'lost-game'" ng-if="stat.homeScore !== stat.awayScore">
-               <div class="kw-bar-empty l-flexbox" style="flex: {{ meetings_max - stat.awayScore }}">
+            <div class="l-flexbox kw-bar-wrapper l-flex-1 l-m-6" rv-class-won-game="score.scoreOnLeft | < score.scoreOnRight" rv-hide="score.scoreOnLeft | = score.scoreOnRight">
+               <div class="kw-bar-empty l-flexbox" rv-style-flex="event.maxScore | - score.scoreOnRight">
                </div>
-               <div class="kw-bar-score l-flexbox" style="flex: {{ stat.awayScore }}">
+               <div class="kw-bar-score l-flexbox" rv-style-flex="score.scoreOnRight">
                </div>
             </div>
          </div>

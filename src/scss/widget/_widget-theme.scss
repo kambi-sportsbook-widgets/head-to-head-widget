@@ -37,14 +37,15 @@ $table-border: 1px solid darken($color-4-1-card-border, 5%);
 .kw-table-item {
    font-size: 14px;
    background-color: $color-4-1-card-background;
+   // Default color for the bar is red
+   .kw-bar-score {
+      background-color: $lost-color;
+   }
    .drawn-game .kw-bar-score {
       background-color: $drawn-color;
    }
    .won-game .kw-bar-score {
       background-color: $won-color;
-   }
-   .lost-game .kw-bar-score {
-      background-color: $lost-color;
    }
    .kw-bar-empty {
       background-color: rgba(0,0,0,0);

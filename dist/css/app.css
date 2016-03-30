@@ -162,14 +162,14 @@ h4 span {
   font-size: 14px;
   background-color: #f6f6f6;
 }
+.kw-table-item .kw-bar-score {
+  background-color: #EB4127;
+}
 .kw-table-item .drawn-game .kw-bar-score {
   background-color: #D2D0D0;
 }
 .kw-table-item .won-game .kw-bar-score {
   background-color: #15BC00;
-}
-.kw-table-item .lost-game .kw-bar-score {
-  background-color: #EB4127;
 }
 .kw-table-item .kw-bar-empty {
   background-color: transparent;
