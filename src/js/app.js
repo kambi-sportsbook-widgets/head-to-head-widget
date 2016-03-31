@@ -10,7 +10,7 @@
             .then(function ( widgetArgs ) {
                this.scope.args = {
                   title: 'Head to Head',
-                  dataUrl: 'head-to-head.json',
+                  filter: 'event/1003123435/',
                   historyLimit: 6
                };
 
@@ -18,11 +18,16 @@
                   this.scope.args[key] = widgetArgs[key];
                }.bind(this));
 
-               CoreLibrary.getData(this.scope.args.dataUrl).then(function ( data ) {
-                  this.scope.data = this.parseDataInfo(data);
-                  this.scope.stats = data.lastEvents;
-                  this.adjustHeight();
-               }.bind(this));
+               if (CoreLibrary.config.offering == null) {
+                  CoreLibrary.config.offering = 'ub';
+               }
+
+               CoreLibrary.statisticsModule.getStatistics('h2h', this.scope.args.filter)
+                  .then(function (data) {
+                     this.scope.data = this.parseDataInfo(data);
+                     this.scope.stats = data.lastEvents;
+                     this.adjustHeight();
+                  }.bind(this));
 
             }.bind(this))
          .catch(function ( error ) {
