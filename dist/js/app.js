@@ -10,7 +10,7 @@
             .then(function ( widgetArgs ) {
                this.scope.args = {
                   title: 'Head to Head',
-                  filter: 'event/1003123435/',
+                  filter: 'event/1002752315/',
                   historyLimit: 6
                };
 

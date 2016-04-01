@@ -1,7 +1,20 @@
 {
+   "coreLibraryBaseUrl": "/lib/dist/",
+   "thirdPartyBaseUrl": "//cdnjs.cloudflare.com/ajax/libs/",
+   "coreLibraryCSS": [
+      "css/app-base-all.min.css",
+      "css/widgets.min.css"
+   ],
+   "coreLibraryJS": [
+      "js/app.min.js"
+   ],
+   "thirdPartyLibs": [
+      "/rivets/0.8.1/rivets.bundled.min.js",
+      "/stapes/0.8.1/stapes.min.js",
+      "/es6-promise/3.2.1/es6-promise.min.js",
+      "/fetch/0.11.0/fetch.min.js"
+   ],
    "htmlReplace": {
-      "corelib": "//kambi-cdn.globalmouth.com/lib/dist/js/app.min.js",
-      "translate": "//kambi-cdn.globalmouth.com/translate/dist/translate.min.js"
    },
    "awsPublishPath": "head-to-head"
 }

@@ -17,27 +17,29 @@
    <meta name="apple-mobile-web-app-title" content="">
 
    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500"/>
+   <!-- build:coreLibraryCSS -->
    <link rel="stylesheet" type="text/css" href="//kambi-cdn.globalmouth.com/lib/dist/css/app-base-all.min.css"/>
    <link rel="stylesheet" type="text/css" href="//kambi-cdn.globalmouth.com/lib/dist/css/widgets.css"/>
+   <!-- endbuild -->
 
    <!-- build:css -->
    <!-- This section will be replaced in the gulp build process -->
    <link rel="stylesheet" type="text/css" href="css/app.css"/>
    <!-- endbuild -->
 
+   <!-- build:thirdPartyLibs -->
    <script src='//cdnjs.cloudflare.com/ajax/libs/rivets/0.8.1/rivets.bundled.min.js'></script>
    <script src='//cdnjs.cloudflare.com/ajax/libs/stapes/0.8.1/stapes.min.js'></script>
    <script src='//cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.1/es6-promise.min.js'></script>
    <script src='//cdnjs.cloudflare.com/ajax/libs/fetch/0.11.0/fetch.min.js'></script>
+   <!-- endbuild -->
 
    <!-- build:corelib -->
    <!-- This section will be replaced in the gulp build process -->
-   <!-- TODO -->
-   <!-- endbuild -->
-
-   <!-- build:translate -->
-   <!-- This section will be replaced in the gulp build process -->
-   <!-- TODO -->
+   <script src="/lib/.compiledTemp/js/coreLibrary.js"></script>
+   <script src="/lib/.compiledTemp/js/widgetModule.js"></script>
+   <script src="/lib/.compiledTemp/js/offeringModule.js"></script>
+   <script src="/lib/.compiledTemp/js/statisticsModule.js"></script>
    <!-- endbuild -->
 
    <!-- build:kambi-widget-api -->
@@ -103,10 +105,6 @@
 
 <!-- build:js -->
 <!-- This section will be replaced in the gulp build process -->
-<script src="js/lib/coreLibrary.js"></script>
-<script src="js/lib/widgetModule.js"></script>
-<script src="js/lib/offeringModule.js"></script>
-<script src="js/lib/statisticsModule.js"></script>
 <script src="js/app.js"></script>
 <!-- endbuild -->
 
