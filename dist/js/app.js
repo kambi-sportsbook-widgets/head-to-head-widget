@@ -35,23 +35,6 @@
             void 0;
          });
 
-         // Formaters and binders for comparison, operation and style
-         rivets.formatters['='] = function (value, args) {
-            return value === args;
-         };
-         rivets.formatters['>'] = function (value, arg) {
-            return value > arg;
-         };
-         rivets.formatters['<'] = function (value, arg) {
-            return value < arg;
-         };
-         rivets.formatters['-'] = function (value, arg) {
-            return value - arg;
-         };
-         rivets.binders['style-*'] = function (el, value) {
-            el.style.setProperty(this.args[0], value);
-         };
-
          this.view = rivets.bind(document.getElementById('main'), this.scope);
       },
 
