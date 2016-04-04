@@ -10,7 +10,7 @@
             .then(function ( widgetArgs ) {
                this.scope.args = {
                   title: 'Head to Head',
-                  filter: 'event/1002752315/',
+                  eventId: '1002788509',
                   historyLimit: 6
                };
 
@@ -22,7 +22,7 @@
                   CoreLibrary.config.offering = 'ub';
                }
 
-               CoreLibrary.statisticsModule.getStatistics('h2h', this.scope.args.filter)
+               CoreLibrary.statisticsModule.getStatistics('h2h', 'event/' + this.scope.args.eventId + '/')
                   .then(function (data) {
                      this.scope.data = this.parseDataInfo(data);
                      this.scope.stats = data.lastEvents;
