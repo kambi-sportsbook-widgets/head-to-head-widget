@@ -9,10 +9,6 @@
       "js/app.min.js"
    ],
    "thirdPartyLibs": [
-      "/rivets/0.8.1/rivets.bundled.min.js",
-      "/stapes/0.8.1/stapes.min.js",
-      "/es6-promise/3.2.1/es6-promise.min.js",
-      "/fetch/0.11.0/fetch.min.js"
    ],
    "htmlReplace": {
    }
