@@ -1,5 +1,5 @@
 {
-   "coreLibraryBaseUrl": "//s3-eu-west-1.amazonaws.com/kambi-widgets/widget-core-library/v0.1.0/",
+   "coreLibraryBaseUrl": "//kambi-cdn.globalmouth.com/widget-core-library/v0.1.0/",
    "thirdPartyBaseUrl": "//cdnjs.cloudflare.com/ajax/libs/",
    "coreLibraryCSS": [
       "css/app-base-all.min.css",
