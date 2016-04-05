@@ -10,8 +10,7 @@
             .then(function ( widgetArgs ) {
                this.scope.args = {
                   title: 'Head to Head',
-                  eventId: '1002788509',
-                  historyLimit: 6
+                  eventId: '1002788509'
                };
 
                Object.keys(widgetArgs).forEach(function ( key ) {
@@ -70,7 +69,7 @@
             };
 
             // Matching the scores of previous events with the current home team
-            if ( homeTeam === item.homeParticipant) {
+            if (homeTeam === item.homeParticipant) {
                item.scoreOnLeft = item.homeScore;
                item.scoreOnRight = item.awayScore;
             } else {

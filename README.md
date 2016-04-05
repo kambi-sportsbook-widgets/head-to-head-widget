@@ -13,8 +13,8 @@ __`client-widgets.js`__
     "order": 1,
     "widgetId": "Event poll widget",
     "args": {
-        "offering": "offering",
-        "historyLimit": 6
+        "title": "Head to Head",
+        "eventId": "1002788509"        
     }
 },
 ...
@@ -22,8 +22,14 @@ __`client-widgets.js`__
 ```
 
 ### The widget accepts the following arguments/s:
-1. `offering` - string - __REQUIRED__ - The offering provided by Kambi
-2. `historyLimit` - integer - defaults to 6 - The max amount of items to show in the meetup history
+
+- title [String]
+
+ The title to show on the header of the widgets
+
+- eventId [Number]
+
+ Id of the event to get data from
 
 # Other tools
 
@@ -34,4 +40,3 @@ To use Scss Lint, run "gem install scss_lint"
 # Changelog
 
 changelog can be found [here](CHANGELOG.md)
-
