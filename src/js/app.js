@@ -10,18 +10,21 @@
             .then(function ( widgetArgs ) {
                this.scope.args = {
                   title: 'Head to Head',
-                  eventId: '1002788509'
+                  eventId: '1002788405'
                };
 
                Object.keys(widgetArgs).forEach(function ( key ) {
                   this.scope.args[key] = widgetArgs[key];
                }.bind(this));
 
-               if (CoreLibrary.config.offering == null) {
-                  CoreLibrary.config.offering = 'ub';
+               // Setting the args.eventId as a fallback
+               var eventId = CoreLibrary.pageInfo.pageParam;
+               if (!CoreLibrary.pageInfo.pageParam) {
+                  eventId = this.scope.args.eventId;
+                  console.log('Missing pageParam, eventId set from args');
                }
 
-               CoreLibrary.statisticsModule.getStatistics('h2h', 'event/' + this.scope.args.eventId + '/')
+               CoreLibrary.statisticsModule.getStatistics('h2h', 'event/' + eventId + '/')
                   .then(function (data) {
                      this.scope.data = this.parseDataInfo(data);
                      this.scope.stats = data.lastEvents;
