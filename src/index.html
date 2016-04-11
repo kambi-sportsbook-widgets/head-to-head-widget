@@ -45,32 +45,46 @@
 
    <!-- build:kambi-widget-api -->
    <!-- This section will be replaced in the gulp build process -->
-   <script src="https://c3-static.kambi.com/sb-mobileclient/widget-api/1.0.0.8/kambi-widget-api.js"></script>
+   <script src="https://c3-static.kambi.com/sb-mobileclient/widget-api/1.0.0.9/kambi-widget-api.js"></script>
    <!-- endbuild -->
 </head>
 <body class="kw-body">
-<div id='main'
-     class="KambiWidget-card-background-color KambiWidget-card-text-color KambiWidget-card-background-color--hoverable l-flexbox l-vertical l-expander">
+<div id='app' class="KambiWidget-card-background-color KambiWidget-card-text-color l-flexbox l-vertical l-expander">
    <!--Header-->
-   <header class="KambiWidget-header kw-header l-flexbox l-pl-16">{args.title}</header>
+   <header class="KambiWidget-header kw-header l-flexbox l-pl-16">{args.title | translate}</header>
    <!--Main-->
-   <main class="kw-main l-flexbox l-vertical l-flex-1" rv-each-event="data">
+   <main class="kw-main l-flexbox l-vertical" rv-each-event="data">
       <div class="kw-teams l-flexbox l-flex-1">
          <div data-item-attr="home" class="l-flexbox l-flex-1 l-pack-end l-p-6">
-            {event.homeTeam}
-            <!--Placeholder icons-->
-            <img class="kw-icon"
-                 src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDQ1NS4zIDQ1NS4zIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NTUuMyA0NTUuMzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmb250LWZhbWlseTonTXlhbm1hck1OLUJvbGQnO30KCS5zdDF7Zm9udC1zaXplOjMwMHB4O30KPC9zdHlsZT4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjI3LjcsMGMtNjAuOCwwLTExOCwyMy43LTE2MSw2Ni43Yy00Myw0My02Ni43LDEwMC4yLTY2LjcsMTYxYzAsNjAuOCwyMy43LDExOCw2Ni43LDE2MXMxMDAuMiw2Ni43LDE2MSw2Ni43CgkJCXMxMTgtMjMuNywxNjEtNjYuN3M2Ni43LTEwMC4yLDY2LjctMTYxYzAtNjAuOC0yMy43LTExOC02Ni43LTE2MVMyODguNSwwLDIyNy43LDB6IE0zNzEsMzcxYy0zOC4zLDM4LjMtODkuMiw1OS40LTE0My4zLDU5LjQKCQkJYy01NC4xLDAtMTA1LTIxLjEtMTQzLjMtNTkuNEM0Ni4xLDMzMi43LDI1LDI4MS44LDI1LDIyNy43czIxLjEtMTA1LDU5LjQtMTQzLjNDMTIyLjYsNDYuMSwxNzMuNSwyNSwyMjcuNywyNQoJCQljNTQuMSwwLDEwNSwyMS4xLDE0My4zLDU5LjRjMzguMywzOC4zLDU5LjQsODkuMiw1OS40LDE0My4zUzQwOS4yLDMzMi43LDM3MSwzNzF6Ii8+Cgk8L2c+Cgk8dGV4dCB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAxIDExNCAzMzMuNDYpIiBjbGFzcz0ic3QwIHN0MSI+SDwvdGV4dD4KPC9nPgo8L3N2Zz4K"/>
+            <div class="text-truncate">{event.homeTeam}</div>
+            <!--Team icons-->
+            <svg rv-show="teamColors.home" class="l-pt-6 l-pb-6 l-ml-12 l-mr-12" viewBox="0 0 10 10">
+               <defs>
+                  <clipPath id="home-team-clip-path">
+                     <path d="M0,10 L 10,0 L 10,10 Z" style="fill:none"></path>
+                  </clipPath>
+               </defs>
+               <circle cx="5" cy="5" r="5" stroke="#DDD" rv-fill="teamColors.home.shirtColor1"></circle>
+               <circle cx="5" cy="5" r="5" stroke="#DDD" rv-fill="teamColors.home.shirtColor2" style="clip-path:url(#home-team-clip-path)"></circle>
+            </svg>
          </div>
          <div data-item-attr="away" class="l-flexbox l-flex-1 l-pack-start l-p-6">
-            <img class="kw-icon"
-                 src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDQ1NS4zIDQ1NS4zIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NTUuMyA0NTUuMzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmb250LWZhbWlseTonTXlhbm1hck1OLUJvbGQnO30KCS5zdDF7Zm9udC1zaXplOjMwMHB4O30KPC9zdHlsZT4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjI3LjcsMGMtNjAuOCwwLTExOCwyMy43LTE2MSw2Ni43Yy00Myw0My02Ni43LDEwMC4yLTY2LjcsMTYxYzAsNjAuOCwyMy43LDExOCw2Ni43LDE2MXMxMDAuMiw2Ni43LDE2MSw2Ni43CgkJCXMxMTgtMjMuNywxNjEtNjYuN3M2Ni43LTEwMC4yLDY2LjctMTYxYzAtNjAuOC0yMy43LTExOC02Ni43LTE2MVMyODguNSwwLDIyNy43LDB6IE0zNzEsMzcxYy0zOC4zLDM4LjMtODkuMiw1OS40LTE0My4zLDU5LjQKCQkJYy01NC4xLDAtMTA1LTIxLjEtMTQzLjMtNTkuNEM0Ni4xLDMzMi43LDI1LDI4MS44LDI1LDIyNy43czIxLjEtMTA1LDU5LjQtMTQzLjNDMTIyLjYsNDYuMSwxNzMuNSwyNSwyMjcuNywyNQoJCQljNTQuMSwwLDEwNSwyMS4xLDE0My4zLDU5LjRjMzguMywzOC4zLDU5LjQsODkuMiw1OS40LDE0My4zUzQwOS4yLDMzMi43LDM3MSwzNzF6Ii8+Cgk8L2c+Cgk8dGV4dCB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAxIDExNCAzMTkuNDYpIiBjbGFzcz0ic3QwIHN0MSI+QTwvdGV4dD4KPC9nPgo8L3N2Zz4K"/>
-            {event.awayTeam}
+            <!--Team icons-->
+            <svg rv-show="teamColors.away" class="l-pt-6 l-pb-6 l-ml-12 l-mr-12" viewBox="0 0 10 10">
+               <defs>
+                  <clipPath id="away-team-clip-path">
+                     <path d="M0,10 L 10,0 L 10,10 Z" style="fill:none"></path>
+                  </clipPath>
+               </defs>
+               <circle cx="5" cy="5" r="5" stroke="#DDD" rv-fill="teamColors.away.shirtColor1"></circle>
+               <circle cx="5" cy="5" r="5" stroke="#DDD" rv-fill="teamColors.away.shirtColor2" style="clip-path:url(#away-team-clip-path)"></circle>
+            </svg>
+            <div class="text-truncate">{event.awayTeam}</div>
          </div>
       </div>
-      <div class="kw-table-item l-flexbox l-flex-1" rv-each-score="event.lastEvents">
+      <div class="kw-table-item KambiWidget-card-background-color--hoverable l-flexbox l-flex-1" rv-each-score="event.lastEvents">
          <div data-item-attr="home" class="l-flexbox l-flex-1 l-p-6">
-            <div class="kw-score l-flexbox l-align-center l-mr-6 l-ml-12">
+            <div class="kw-score l-flexbox l-align-center l-pack-center l-ml-12 l-mr-12">
                {score.scoreOnLeft}
             </div>
             <div class="l-flexbox kw-bar-wrapper drawn-game l-flex-1 l-m-6" rv-show="score.scoreOnLeft | === score.scoreOnRight">
@@ -88,7 +102,7 @@
             </div>
          </div>
          <div data-item-attr="away" class="l-flexbox l-flex-1 l-p-6">
-            <div class="kw-score l-flexbox l-align-center l-mr-6 l-ml-12">
+            <div class="kw-score l-flexbox l-align-center l-pack-center l-ml-12 l-mr-12">
                {score.scoreOnRight}
             </div>
             <div class="l-flexbox kw-bar-wrapper drawn-game l-flex-1 l-m-6" rv-show="score.scoreOnLeft | === score.scoreOnRight">
@@ -105,6 +119,7 @@
                </div>
             </div>
          </div>
+      </div>
    </main>
 </div>
 
