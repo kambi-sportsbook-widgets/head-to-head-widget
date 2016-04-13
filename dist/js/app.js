@@ -5,17 +5,17 @@
    var HeadToHead = Stapes.subclass({
       constructor: function () {
          this.scope = {};
-         var appEl = document.getElementById('app');
+         var appEl = document.getElementById('app'),
+            baseWidgetCSS = '//c3-static.kambi.com/sb-mobileclient/widget-api/1.0.0.10/resources/css/';
 
          CoreLibrary.init()
             .then(function ( widgetArgs ) {
 
                this.scope.args = {
                   title: 'Head to Head',
-                  eventId: '1003143574'
+                  eventId: '1003145950'
                };
-
-               this.scope.teamColors = {};
+               this.scope.widgetCss = baseWidgetCSS + CoreLibrary.config.clientConfig.customer + '/' + CoreLibrary.config.clientConfig.offering + '/widgets.css';
 
                Object.keys(widgetArgs).forEach(function ( key ) {
                   this.scope.args[key] = widgetArgs[key];
@@ -45,7 +45,7 @@
                                  // offering api returns invalid teamColors hex value, gonna check for length, else we display mock colors
                                  if ( item.teamColors && (item.teamColors.home.shirtColor1.length === 7 || item.teamColors.home.shirtColor1.length === 4) ) {
                                     this.scope.teamColors = item.teamColors;
-                                 } else {
+                                 } else if ( item.teamColors ) {
                                     this.scope.teamColors = {
                                        home: {
                                           shirtColor1: '#00FFFF',
@@ -57,15 +57,16 @@
                                        }
                                     };
                                  }
-                                 rivets.bind(appEl, this.scope);
                               }
                            }
+                           this.view.update(this.scope);
+
                         }.bind(this));
 
                   }.bind(this)).catch(function ( error ) {
                   void 0;
                   CoreLibrary.widgetModule.setWidgetHeight(0);
-               });
+               }.bind(this));
 
             }.bind(this))
             .catch(function ( error ) {
@@ -73,7 +74,7 @@
                void 0;
             });
 
-         rivets.bind(appEl, this.scope);
+         this.view = rivets.bind(appEl, this.scope);
       },
 
       adjustHeight: function () {
