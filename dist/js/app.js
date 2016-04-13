@@ -62,10 +62,9 @@
                            this.view.update(this.scope);
 
                         }.bind(this));
-
                   }.bind(this)).catch(function ( error ) {
                   void 0;
-                  CoreLibrary.widgetModule.setWidgetHeight(0);
+                  CoreLibrary.widgetModule.removeWidget();
                }.bind(this));
 
             }.bind(this))
