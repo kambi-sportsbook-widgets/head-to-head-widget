@@ -35,8 +35,9 @@
                      this.scope.data = this.parseDataInfo(data);
                      this.scope.stats = data.lastEvents;
                      this.adjustHeight();
+                     var event_type = CoreLibrary.offeringModule.getPageType();
 
-                     CoreLibrary.offeringModule.doRequest('/betoffer/live/event/' + eventId + '.json?lang=en_GB&market=GB', false, 'v2')
+                     CoreLibrary.offeringModule.doRequest('/betoffer/' + event_type + 'event/' + eventId + '.json', false, 'v2')
                         .then(function ( data ) {
                            if ( data && data.events && data.events.length ) {
                               var i = 0, arrLength = data.events.length;
