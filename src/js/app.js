@@ -62,10 +62,11 @@
                            }
                         }.bind(this));
 
-                  }.bind(this)).catch(function ( error ) {
-                  console.warn('Cannot load statistics data');
-                  CoreLibrary.widgetModule.setWidgetHeight(0);
-               });
+                  }.bind(this))
+                  .catch(function ( error ) {
+                     // Error loading statistics data, remove the widget
+                     CoreLibrary.widgetModule.removeWidget();
+                  });
 
             }.bind(this))
             .catch(function ( error ) {
