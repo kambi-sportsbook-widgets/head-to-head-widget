@@ -21,8 +21,6 @@
                   this.scope.args[key] = widgetArgs[key];
                }.bind(this));
 
-               void 0;
-
                CoreLibrary.widgetModule.enableWidgetTransition(true);
 
                // Setting the args.eventId as a fallback
@@ -37,7 +35,7 @@
                      this.scope.data = this.parseDataInfo(data);
                      this.scope.stats = data.lastEvents;
                      this.adjustHeight();
-                     var event_type = CoreLibrary.offeringModule.getPageType();
+                     var event_type = CoreLibrary.widgetModule.getPageType();
 
                      CoreLibrary.offeringModule.doRequest('/betoffer/' + event_type + 'event/' + eventId + '.json', false, 'v2')
                         .then(function ( data ) {
