@@ -5,17 +5,17 @@
    var HeadToHead = Stapes.subclass({
       constructor: function () {
          this.scope = {};
-         var appEl = document.getElementById('app');
+         var appEl = document.getElementById('app'),
+            baseWidgetCSS = '//c3-static.kambi.com/sb-mobileclient/widget-api/1.0.0.10/resources/css/';
 
          CoreLibrary.init()
             .then(function ( widgetArgs ) {
 
                this.scope.args = {
                   title: 'Head to Head',
-                  eventId: '1003143574'
+                  eventId: '1003145950'
                };
-
-               this.scope.teamColors = {};
+               this.scope.widgetCss = baseWidgetCSS + CoreLibrary.config.clientConfig.customer + '/' + CoreLibrary.config.clientConfig.offering + '/widgets.css';
 
                Object.keys(widgetArgs).forEach(function ( key ) {
                   this.scope.args[key] = widgetArgs[key];
@@ -35,8 +35,9 @@
                      this.scope.data = this.parseDataInfo(data);
                      this.scope.stats = data.lastEvents;
                      this.adjustHeight();
+                     var event_type = CoreLibrary.widgetModule.getPageType();
 
-                     CoreLibrary.offeringModule.doRequest('/betoffer/live/event/' + eventId + '.json?lang=en_GB&market=GB', false, 'v2')
+                     CoreLibrary.offeringModule.doRequest('/betoffer/' + event_type + 'event/' + eventId + '.json', false, 'v2')
                         .then(function ( data ) {
                            if ( data && data.events && data.events.length ) {
                               var i = 0, arrLength = data.events.length;
@@ -45,7 +46,7 @@
                                  // offering api returns invalid teamColors hex value, gonna check for length, else we display mock colors
                                  if ( item.teamColors && (item.teamColors.home.shirtColor1.length === 7 || item.teamColors.home.shirtColor1.length === 4) ) {
                                     this.scope.teamColors = item.teamColors;
-                                 } else {
+                                 } else if ( item.teamColors ) {
                                     this.scope.teamColors = {
                                        home: {
                                           shirtColor1: '#00FFFF',
@@ -57,16 +58,15 @@
                                        }
                                     };
                                  }
-                                 rivets.bind(appEl, this.scope);
                               }
                            }
-                        }.bind(this));
+                           this.view.update(this.scope);
 
-                  }.bind(this))
-                  .catch(function ( error ) {
-                     // Error loading statistics data, remove the widget
-                     CoreLibrary.widgetModule.removeWidget();
-                  });
+                        }.bind(this));
+                  }.bind(this)).catch(function ( error ) {
+                  void 0;
+                  CoreLibrary.widgetModule.removeWidget();
+               }.bind(this));
 
             }.bind(this))
             .catch(function ( error ) {
@@ -74,7 +74,7 @@
                void 0;
             });
 
-         rivets.bind(appEl, this.scope);
+         this.view = rivets.bind(appEl, this.scope);
       },
 
       adjustHeight: function () {

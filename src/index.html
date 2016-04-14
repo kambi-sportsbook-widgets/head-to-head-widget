@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html id='app'>
 <head>
    <title>Head to head</title>
    <meta charset="UTF-8">
@@ -19,9 +19,10 @@
    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500"/>
    <!-- build:coreLibraryCSS -->
    <link rel="stylesheet" type="text/css" href="/lib/.compiledTemp/css/app-base-all.css"/>
-   <link rel="stylesheet" type="text/css" href="/lib/.compiledTemp/css/widgets.css"/>
    <link rel="stylesheet" type="text/css" href="/lib/.compiledTemp/css/app-base-icons.css"/>
    <!-- endbuild -->
+
+   <link rel="stylesheet" type="text/css" rv-href="widgetCss"/>
 
    <!-- build:css -->
    <!-- This section will be replaced in the gulp build process -->
@@ -45,11 +46,11 @@
 
    <!-- build:kambi-widget-api -->
    <!-- This section will be replaced in the gulp build process -->
-   <script src="https://c3-static.kambi.com/sb-mobileclient/widget-api/1.0.0.9/kambi-widget-api.js"></script>
+   <script src="https://c3-static.kambi.com/sb-mobileclient/widget-api/1.0.0.10/kambi-widget-api.js"></script>
    <!-- endbuild -->
 </head>
 <body class="kw-body">
-<div id='app' class="KambiWidget-card-background-color KambiWidget-card-text-color l-flexbox l-vertical l-expander">
+<div class="KambiWidget-card-background-color KambiWidget-card-text-color l-flexbox l-vertical l-expander" rv-cloak>
    <!--Header-->
    <header class="KambiWidget-header kw-header l-flexbox l-pl-16">{args.title | translate}</header>
    <!--Main-->
