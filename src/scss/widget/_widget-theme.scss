@@ -1,55 +1,59 @@
-$table-border: 1px solid $color-4-1-card-border;
-
 #app {
    height: 100%;
    position: relative;
 }
 
 [data-item-attr="home"], [data-item-attr="away"] {
-   height: 35px;
-}
-
-.kw-icon {
-   width: 35px;
+   height: 37px;
 }
 
 .kw-teams {
-   background-color: white;
-   border-bottom: $table-border;
-   font-size: 13px;
-   [data-item-attr="home"] {
-      border-right: $table-border;
+   color: $color-4-2-card-supportive-text;
+   font-size: 14px;
+   line-height: 24px;
+}
+
+.kw-score {
+   min-width: 12px;
+}
+
+.kw-bar-score {
+   width: 0;
+}
+
+.kw-bar-wrapper {
+   background-color: $bar-background;
+   height: 4px;
+
+   > div {
+      @include transition(.5s ease-out all);
    }
 }
 
-svg, .kw-score {
-   width: 12px;
-}
-
 .kw-table-item {
-   border-bottom: $table-border;
    [data-item-attr="home"] {
-      border-right: $table-border;
       @include box-orient(row-reverse);
-   }
-}
 
-.kw-table-item {
-   background-color: $color-4-1-card-background;
+      .kw-score {
+         position: relative;
+         &:after {
+            content: '-';
+            height: 3px;
+            position: absolute;
+            right: -2px;
+            top: 0;
+            width: 3px;
+         }
+      }
+   }
    // Default color for the bar
-   .kw-bar-score {
+   .lost-game {
       background-color: $lost-color;
    }
-   .drawn-game .kw-bar-score {
+   .drawn-game {
       background-color: $drawn-color;
    }
-   .won-game .kw-bar-score {
+   .won-game {
       background-color: $won-color;
-   }
-   .kw-bar-empty {
-      background-color: rgba(0, 0, 0, 0);
-   }
-   [data-item-attr="away"] .kw-bar-wrapper {
-      @include box-orient(row-reverse);
    }
 }

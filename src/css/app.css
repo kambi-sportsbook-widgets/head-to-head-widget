@@ -35,6 +35,22 @@
   animation-name: zoomIn;
 }
 
+.KambiWidget-card-background-color {
+  background-color: #fff;
+}
+
+.KambiWidget-card-border-color {
+  border-bottom-width: 1px;
+  border-bottom-color: #ddd;
+}
+
+.kw-header {
+  border-bottom: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #222;
+}
+
 h4 {
   font-size: 13px;
 }
@@ -48,31 +64,35 @@ h4 span {
 }
 
 [data-item-attr="home"], [data-item-attr="away"] {
-  height: 35px;
-}
-
-.kw-icon {
-  width: 35px;
+  height: 37px;
 }
 
 .kw-teams {
-  background-color: white;
-  border-bottom: 1px solid #EAEAEA;
-  font-size: 13px;
-}
-.kw-teams [data-item-attr="home"] {
-  border-right: 1px solid #EAEAEA;
+  color: #666;
+  font-size: 14px;
+  line-height: 24px;
 }
 
-svg, .kw-score {
-  width: 12px;
+.kw-score {
+  min-width: 12px;
 }
 
-.kw-table-item {
-  border-bottom: 1px solid #EAEAEA;
+.kw-bar-score {
+  width: 0;
 }
+
+.kw-bar-wrapper {
+  background-color: #ededed;
+  height: 4px;
+}
+.kw-bar-wrapper > div {
+  -moz-transition: ease-out 0.5s all;
+  -o-transition: ease-out 0.5s all;
+  -webkit-transition: ease-out 0.5s all;
+  transition: ease-out 0.5s all;
+}
+
 .kw-table-item [data-item-attr="home"] {
-  border-right: 1px solid #EAEAEA;
   -webkit-box-direction: reverse;
   -webkit-box-orient: horizontal;
   -webkit-flex-direction: row-reverse;
@@ -80,29 +100,25 @@ svg, .kw-score {
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
 }
-
-.kw-table-item {
-  background-color: #f6f6f6;
+.kw-table-item [data-item-attr="home"] .kw-score {
+  position: relative;
 }
-.kw-table-item .kw-bar-score {
-  background-color: #EB4127;
+.kw-table-item [data-item-attr="home"] .kw-score:after {
+  content: '-';
+  height: 3px;
+  position: absolute;
+  right: -2px;
+  top: 0;
+  width: 3px;
 }
-.kw-table-item .drawn-game .kw-bar-score {
-  background-color: #D2D0D0;
+.kw-table-item .lost-game {
+  background-color: #E70000;
 }
-.kw-table-item .won-game .kw-bar-score {
-  background-color: #15BC00;
+.kw-table-item .drawn-game {
+  background-color: #FACF00;
 }
-.kw-table-item .kw-bar-empty {
-  background-color: transparent;
-}
-.kw-table-item [data-item-attr="away"] .kw-bar-wrapper {
-  -webkit-box-direction: reverse;
-  -webkit-box-orient: horizontal;
-  -webkit-flex-direction: row-reverse;
-  -moz-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
+.kw-table-item .won-game {
+  background-color: #00B500;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -13,7 +13,7 @@
 
                this.scope.args = {
                   title: 'Head to Head',
-                  eventId: '1003145950'
+                  eventId: '1003156135'
                };
                this.scope.widgetCss = baseWidgetCSS + CoreLibrary.config.clientConfig.customer + '/' + CoreLibrary.config.clientConfig.offering + '/widgets.css';
 
@@ -35,34 +35,6 @@
                      this.scope.data = this.parseDataInfo(data);
                      this.scope.stats = data.lastEvents;
                      this.adjustHeight();
-                     var event_type = CoreLibrary.widgetModule.getPageType();
-
-                     CoreLibrary.offeringModule.doRequest('/betoffer/' + event_type + 'event/' + eventId + '.json', false, 'v2')
-                        .then(function ( data ) {
-                           if ( data && data.events && data.events.length ) {
-                              var i = 0, arrLength = data.events.length;
-                              for ( ; i < arrLength; ++i ) {
-                                 var item = data.events[i];
-                                 // offering api returns invalid teamColors hex value, gonna check for length, else we display mock colors
-                                 if ( item.teamColors && (item.teamColors.home.shirtColor1.length === 7 || item.teamColors.home.shirtColor1.length === 4) ) {
-                                    this.scope.teamColors = item.teamColors;
-                                 } else if ( item.teamColors ) {
-                                    this.scope.teamColors = {
-                                       home: {
-                                          shirtColor1: '#00FFFF',
-                                          shirtColor2: '#FFFFFF'
-                                       },
-                                       away: {
-                                          shirtColor1: '#CC0000',
-                                          shirtColor2: '#000'
-                                       }
-                                    };
-                                 }
-                              }
-                           }
-                           this.view.update(this.scope);
-
-                        }.bind(this));
                   }.bind(this)).catch(function ( error ) {
                   console.warn('Cannot load statistics data');
                   CoreLibrary.widgetModule.removeWidget();
@@ -78,8 +50,8 @@
       },
 
       adjustHeight: function () {
-         var headerHeight = 37 * 2;
-         var tableItemHeight = 35;
+         var headerHeight = 37 * 2 + 12;
+         var tableItemHeight = 37;
          var contentHeight = headerHeight;
 
          this.scope.stats.forEach(function () {
@@ -142,6 +114,10 @@
          return dataInfo;
       }
    });
+
+   rivets.binders['width'] = function (el, value) {
+      el.style.setProperty('width', (value * 100) + '%');
+   };
 
    var headToHead = new HeadToHead();
 
