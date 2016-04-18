@@ -12,8 +12,7 @@
             .then(function ( widgetArgs ) {
 
                this.scope.args = {
-                  title: 'Head to Head',
-                  eventId: '1003156135'
+                  title: 'Head to Head'
                };
                this.scope.widgetCss = baseWidgetCSS + CoreLibrary.config.clientConfig.customer + '/' + CoreLibrary.config.clientConfig.offering + '/widgets.css';
 
