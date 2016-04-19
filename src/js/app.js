@@ -32,7 +32,6 @@
                CoreLibrary.statisticsModule.getStatistics('h2h', 'event/' + eventId + '/')
                   .then(function ( data ) {
                      this.scope.data = this.parseDataInfo(data);
-                     this.scope.stats = data.lastEvents;
                      this.adjustHeight();
                   }.bind(this)).catch(function ( error ) {
                   console.warn('Cannot load statistics data');
@@ -114,7 +113,7 @@
       }
    });
 
-   rivets.binders['width'] = function (el, value) {
+   rivets.binders['width'] = function ( el, value ) {
       el.style.setProperty('width', (value * 100) + '%');
    };
 

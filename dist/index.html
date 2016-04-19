@@ -43,7 +43,8 @@
          </div>
       </div>
       <!--Statistics-->
-      <div class="kw-table-item KambiWidget-card-background-color--hoverable l-flexbox l-flex-1 l-pl-16 l-pr-16" rv-each-score="event.lastEvents">
+      <div class="kw-table-item KambiWidget-card-background-color--hoverable l-flexbox l-flex-1 l-pl-16 l-pr-16"
+           rv-anim-stagger="index" rv-each-score="event.lastEvents">
          <div data-item-attr="home" class="l-flexbox l-align-center l-flex-1">
             <div class="kw-score l-flexbox l-align-center l-pack-center l-pl-16 l-pr-16 ">
                {score.scoreOnLeft}
