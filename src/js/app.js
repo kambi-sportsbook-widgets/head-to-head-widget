@@ -22,11 +22,14 @@
 
                CoreLibrary.widgetModule.enableWidgetTransition(true);
 
-               // Setting the args.eventId as a fallback
-               var eventId = CoreLibrary.pageInfo.pageParam;
-               if ( !CoreLibrary.pageInfo.pageParam ) {
+               // Setting the pageParam as a fallback
+               var eventId;
+               if ( this.scope.args.eventId !== null ) {
                   eventId = this.scope.args.eventId;
-                  console.warn('Missing pageParam, eventId set from args');
+                  console.warn('eventId set from args.eventId');
+               } else {
+                  eventId = CoreLibrary.pageInfo.pageParam;
+                  console.warn('eventId set from pageParam');
                }
 
                CoreLibrary.statisticsModule.getStatistics('h2h', 'event/' + eventId + '/')
