@@ -49,7 +49,7 @@
       },
 
       adjustHeight: function () {
-         var headerHeight = 37 * 2 + 12;
+         var headerHeight = 32 * 2 + 6;
          var tableItemHeight = 37;
          var contentHeight = headerHeight;
 
