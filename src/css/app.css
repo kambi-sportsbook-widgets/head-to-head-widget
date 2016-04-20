@@ -38,16 +38,17 @@
 }
 
 .KambiWidget-card-border-color {
-  border-bottom-width: 1px;
   border-bottom-color: #ddd;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
 }
 
 .kw-header {
+  background-color: white;
   border-bottom: 0;
+  color: #222;
   font-size: 16px;
   line-height: 24px;
-  color: #222;
-  background-color: white;
 }
 
 h4 {
