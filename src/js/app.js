@@ -24,7 +24,7 @@
 
                // Setting the pageParam as a fallback
                var eventId;
-               if ( this.scope.args.eventId !== null ) {
+               if ( this.scope.args.eventId != null ) {
                   eventId = this.scope.args.eventId;
                   console.warn('eventId set from args.eventId');
                } else {
