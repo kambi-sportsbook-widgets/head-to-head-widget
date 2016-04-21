@@ -1,56 +1,43 @@
 (function () {
-
    'use strict';
 
-   var HeadToHead = Stapes.subclass({
+   var HeadToHead = CoreLibrary.Component.subclass({
+      defaultArgs: {
+         title: 'Head to Head'
+      },
+
       constructor: function () {
-         this.scope = {};
-         var appEl = document.getElementById('app'),
-            baseWidgetCSS = '//c3-static.kambi.com/sb-mobileclient/widget-api/1.0.0.10/resources/css/';
+         CoreLibrary.Component.apply(this, arguments);
+      },
 
-         CoreLibrary.init()
-            .then(function ( widgetArgs ) {
+      init: function () {
+         CoreLibrary.widgetModule.enableWidgetTransition(true);
 
-               this.scope.args = {
-                  title: 'Head to Head'
-               };
+         // Setting the pageParam as a fallback
+         var eventId;
+         if ( this.scope.args.eventId != null ) {
+            eventId = this.scope.args.eventId;
+            void 0;
+         } else {
+            eventId = CoreLibrary.pageInfo.pageParam;
+            void 0;
+         }
 
-               this.scope.widgetCss = baseWidgetCSS + CoreLibrary.config.clientConfig.customer + '/' + CoreLibrary.config.clientConfig.offering + '/widgets.css';
+         this.view.binders['width'] = function ( el, value ) {
+            el.style.setProperty('width', (value * 100) + '%');
+         };
 
-               Object.keys(widgetArgs).forEach(function ( key ) {
-                  this.scope.args[key] = widgetArgs[key];
-               }.bind(this));
-
-               CoreLibrary.widgetModule.enableWidgetTransition(true);
-
-               // Setting the pageParam as a fallback
-               var eventId;
-               if ( this.scope.args.eventId != null ) {
-                  eventId = this.scope.args.eventId;
-                  void 0;
-               } else {
-                  eventId = CoreLibrary.pageInfo.pageParam;
-                  void 0;
-               }
-
-               CoreLibrary.statisticsModule.getStatistics('h2h', 'event/' + eventId + '/')
-                  .then(function ( data ) {
-                     this.scope.data = this.parseDataInfo(data);
-                     this.scope.stats = data.lastEvents;
-                     this.adjustHeight();
-                     this.scope.onLoad = 'block';
-                  }.bind(this)).catch(function ( error ) {
-                  void 0;
-                  CoreLibrary.widgetModule.removeWidget();
-               }.bind(this));
-
+         CoreLibrary.statisticsModule.getStatistics('h2h', 'event/' + eventId + '/')
+            .then(function ( data ) {
+               this.scope.data = this.parseDataInfo(data);
+               this.scope.stats = data.lastEvents;
+               this.adjustHeight();
+               this.scope.onLoad = 'block';
             }.bind(this))
             .catch(function ( error ) {
                void 0;
-               void 0;
-            });
-
-         this.view = rivets.bind(appEl, this.scope);
+               CoreLibrary.widgetModule.removeWidget();
+            }.bind(this));
       },
 
       adjustHeight: function () {
@@ -119,10 +106,8 @@
       }
    });
 
-   rivets.binders['width'] = function ( el, value ) {
-      el.style.setProperty('width', (value * 100) + '%');
-   };
-
-   var headToHead = new HeadToHead();
+   var headToHead = new HeadToHead({
+      rootElement: 'html'
+   });
 
 })();
