@@ -3,10 +3,6 @@
    position: relative;
 }
 
-[data-item-attr="home"], [data-item-attr="away"] {
-   height: 32px;
-}
-
 .kw-teams {
    color: $color-4-2-card-supportive-text;
    font-size: 14px;
@@ -14,6 +10,8 @@
 }
 
 .kw-score {
+   font-size: 12px;
+   line-height: 24px;
    min-width: 12px;
 }
 
@@ -31,6 +29,8 @@
 }
 
 .kw-table-item {
+   margin-bottom: 8px;
+
    [data-item-attr="home"] {
       @include box-orient(row-reverse);
 

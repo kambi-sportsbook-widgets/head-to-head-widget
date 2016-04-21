@@ -63,10 +63,6 @@ h4 span {
   position: relative;
 }
 
-[data-item-attr="home"], [data-item-attr="away"] {
-  height: 32px;
-}
-
 .kw-teams {
   color: #666;
   font-size: 14px;
@@ -74,6 +70,8 @@ h4 span {
 }
 
 .kw-score {
+  font-size: 12px;
+  line-height: 24px;
   min-width: 12px;
 }
 
@@ -92,6 +90,9 @@ h4 span {
   transition: ease-out 0.5s all;
 }
 
+.kw-table-item {
+  margin-bottom: 8px;
+}
 .kw-table-item [data-item-attr="home"] {
   -webkit-box-direction: reverse;
   -webkit-box-orient: horizontal;
