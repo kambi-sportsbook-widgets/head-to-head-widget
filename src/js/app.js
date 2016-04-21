@@ -35,6 +35,7 @@
                CoreLibrary.statisticsModule.getStatistics('h2h', 'event/' + eventId + '/')
                   .then(function ( data ) {
                      this.scope.data = this.parseDataInfo(data);
+                     this.scope.stats = data.lastEvents;
                      this.adjustHeight();
                   }.bind(this)).catch(function ( error ) {
                   console.warn('Cannot load statistics data');
@@ -51,8 +52,8 @@
       },
 
       adjustHeight: function () {
-         var headerHeight = 32 * 2 + 6;
-         var tableItemHeight = 37;
+         var headerHeight = 56 + 30 + 12 + 1; // header + subheader + margin-bottom  + border
+         var tableItemHeight = 32;
          var contentHeight = headerHeight;
 
          this.scope.stats.forEach(function () {
