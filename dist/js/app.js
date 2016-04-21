@@ -14,6 +14,7 @@
                this.scope.args = {
                   title: 'Head to Head'
                };
+
                this.scope.widgetCss = baseWidgetCSS + CoreLibrary.config.clientConfig.customer + '/' + CoreLibrary.config.clientConfig.offering + '/widgets.css';
 
                Object.keys(widgetArgs).forEach(function ( key ) {
@@ -22,17 +23,22 @@
 
                CoreLibrary.widgetModule.enableWidgetTransition(true);
 
-               // Setting the args.eventId as a fallback
-               var eventId = CoreLibrary.pageInfo.pageParam;
-               if ( !CoreLibrary.pageInfo.pageParam ) {
+               // Setting the pageParam as a fallback
+               var eventId;
+               if ( this.scope.args.eventId != null ) {
                   eventId = this.scope.args.eventId;
+                  void 0;
+               } else {
+                  eventId = CoreLibrary.pageInfo.pageParam;
                   void 0;
                }
 
                CoreLibrary.statisticsModule.getStatistics('h2h', 'event/' + eventId + '/')
                   .then(function ( data ) {
                      this.scope.data = this.parseDataInfo(data);
+                     this.scope.stats = data.lastEvents;
                      this.adjustHeight();
+                     this.scope.onLoad = 'block';
                   }.bind(this)).catch(function ( error ) {
                   void 0;
                   CoreLibrary.widgetModule.removeWidget();
@@ -48,8 +54,8 @@
       },
 
       adjustHeight: function () {
-         var headerHeight = 32 * 2 + 6;
-         var tableItemHeight = 37;
+         var headerHeight = 56 + 30 + 12 + 1; // header + subheader + margin-bottom  + border
+         var tableItemHeight = 32;
          var contentHeight = headerHeight;
 
          this.scope.stats.forEach(function () {

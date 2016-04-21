@@ -38,16 +38,17 @@
 }
 
 .KambiWidget-card-border-color {
-  border-bottom-width: 1px;
   border-bottom-color: #ddd;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
 }
 
 .kw-header {
+  background-color: white;
   border-bottom: 0;
+  color: #222;
   font-size: 16px;
   line-height: 24px;
-  color: #222;
-  background-color: white;
 }
 
 h4 {
@@ -62,8 +63,8 @@ h4 span {
   position: relative;
 }
 
-[data-item-attr="home"], [data-item-attr="away"] {
-  height: 32px;
+.kw-body {
+  display: none;
 }
 
 .kw-teams {
@@ -73,6 +74,8 @@ h4 span {
 }
 
 .kw-score {
+  font-size: 12px;
+  line-height: 24px;
   min-width: 12px;
 }
 
@@ -91,6 +94,9 @@ h4 span {
   transition: ease-out 0.5s all;
 }
 
+.kw-table-item {
+  margin-bottom: 8px;
+}
 .kw-table-item [data-item-attr="home"] {
   -webkit-box-direction: reverse;
   -webkit-box-orient: horizontal;
