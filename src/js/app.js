@@ -14,6 +14,7 @@
                this.scope.args = {
                   title: 'Head to Head'
                };
+
                this.scope.widgetCss = baseWidgetCSS + CoreLibrary.config.clientConfig.customer + '/' + CoreLibrary.config.clientConfig.offering + '/widgets.css';
 
                Object.keys(widgetArgs).forEach(function ( key ) {
@@ -37,6 +38,7 @@
                      this.scope.data = this.parseDataInfo(data);
                      this.scope.stats = data.lastEvents;
                      this.adjustHeight();
+                     this.scope.onLoad = 'block';
                   }.bind(this)).catch(function ( error ) {
                   console.warn('Cannot load statistics data');
                   CoreLibrary.widgetModule.removeWidget();

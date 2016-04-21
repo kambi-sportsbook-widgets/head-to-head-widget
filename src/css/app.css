@@ -63,6 +63,10 @@ h4 span {
   position: relative;
 }
 
+.kw-body {
+  display: none;
+}
+
 .kw-teams {
   color: #666;
   font-size: 14px;
