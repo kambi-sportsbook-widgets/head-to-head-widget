@@ -17,32 +17,16 @@
    <meta name="apple-mobile-web-app-title" content="">
 
    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500"/>
-   <!-- build:coreLibraryCSS -->
-   <link rel="stylesheet" type="text/css" href="/lib/.compiledTemp/css/app-base-all.css"/>
-   <link rel="stylesheet" type="text/css" href="/lib/.compiledTemp/css/app-base-icons.css"/>
-   <!-- endbuild -->
 
    <link rel="stylesheet" type="text/css" rv-href="widgetCss"/>
 
    <!-- build:css -->
    <!-- This section will be replaced in the gulp build process -->
-   <link rel="stylesheet" type="text/css" href="css/app.css"/>
+   <link rel="stylesheet" type="text/css" href="transpiled/css/app.css"/>
    <!-- endbuild -->
 
-   <!-- build:thirdPartyLibs -->
-   <script src='//cdnjs.cloudflare.com/ajax/libs/rivets/0.8.1/rivets.bundled.min.js'></script>
-   <script src='//cdnjs.cloudflare.com/ajax/libs/stapes/0.8.1/stapes.min.js'></script>
-   <script src='//cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.1/es6-promise.min.js'></script>
-   <script src='//cdnjs.cloudflare.com/ajax/libs/fetch/0.11.0/fetch.min.js'></script>
-   <!-- endbuild -->
-
-   <!-- build:corelib -->
-   <!-- This section will be replaced in the gulp build process -->
-   <script src="/lib/.compiledTemp/js/coreLibrary.js"></script>
-   <script src="/lib/.compiledTemp/js/widgetModule.js"></script>
-   <script src="/lib/.compiledTemp/js/offeringModule.js"></script>
-   <script src="/lib/.compiledTemp/js/statisticsModule.js"></script>
-   <script src="/lib/.compiledTemp/js/Component.js"></script>
+   <!-- build:third-party-libs -->
+   <script src="https://s3-eu-west-1.amazonaws.com/kambi-widgets/widget-third-party/v1.2.0/thirdparty.js"></script>
    <!-- endbuild -->
 
    <!-- build:kambi-widget-api -->
@@ -99,7 +83,14 @@
 
 <!-- build:js -->
 <!-- This section will be replaced in the gulp build process -->
-<script src="js/app.js"></script>
+<script src="/node_modules/widget-core-library/src/transpiled/js/coreLibrary.js"></script>
+<script src="/node_modules/widget-core-library/src/transpiled/js/Module/widgetModule.js"></script>
+<script src="/node_modules/widget-core-library/src/transpiled/js/Module/offeringModule.js"></script>
+<script src="/node_modules/widget-core-library/src/transpiled/js/Module/statisticsModule.js"></script>
+<script src="/node_modules/widget-core-library/src/transpiled/js/Module/translationModule.js"></script>
+<script src="/node_modules/widget-core-library/src/transpiled/js/Component/Component.js"></script>
+<script src="/node_modules/widget-core-library/src/transpiled/js/Component/PaginationComponent/PaginationComponent.js"></script>
+<script src="transpiled/js/app.js"></script>
 <!-- endbuild -->
 
 </body>

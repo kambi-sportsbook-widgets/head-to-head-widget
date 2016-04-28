@@ -6,11 +6,11 @@
          title: 'Head to Head'
       },
 
-      constructor: function () {
+      constructor () {
          CoreLibrary.Component.apply(this, arguments);
       },
 
-      init: function () {
+      init () {
          CoreLibrary.widgetModule.enableWidgetTransition(true);
 
          // Setting the pageParam as a fallback
@@ -40,7 +40,7 @@
             }.bind(this));
       },
 
-      adjustHeight: function () {
+      adjustHeight () {
          var headerHeight = 56 + 30 + 12 + 1; // header + subheader + margin-bottom  + border
          var tableItemHeight = 32;
          var contentHeight = headerHeight;
@@ -52,7 +52,7 @@
          CoreLibrary.widgetModule.setWidgetHeight(contentHeight);
       },
 
-      parseDataInfo: function ( data ) {
+      parseDataInfo ( data ) {
          var dataInfo = [];
          var lastEvents = [];
          var allScores = [];
