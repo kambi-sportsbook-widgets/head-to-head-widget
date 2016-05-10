@@ -11,6 +11,7 @@
    color: $color-4-2-card-supportive-text;
    font-size: 14px;
    line-height: 24px;
+   min-height: 24px;
 }
 
 .kw-score {
@@ -34,6 +35,7 @@
 
 .kw-table-item {
    margin-bottom: 8px;
+   min-height: 24px;
 
    [data-item-attr="home"] {
       @include box-orient(row-reverse);
