@@ -798,6 +798,7 @@ h4 span {
   color: #666;
   font-size: 14px;
   line-height: 24px;
+  min-height: 24px;
 }
 
 .kw-score {
@@ -823,6 +824,7 @@ h4 span {
 
 .kw-table-item {
   margin-bottom: 8px;
+  min-height: 24px;
 }
 .kw-table-item [data-item-attr="home"] {
   -webkit-box-direction: reverse;
