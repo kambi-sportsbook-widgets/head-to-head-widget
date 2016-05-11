@@ -1,0 +1,12 @@
+{
+   "coreLibraryBaseUrl": "https://d1fqgomuxh4f5p.cloudfront.net/widget-core-library/0.1.8/",
+   "coreLibraryCSS": [
+      "css/app-base-all.min.css"
+   ],
+   "coreLibraryJS": [
+      "js/app.min.js"
+   ],
+   "htmlReplace": {
+   },
+   "awsPublishPath": "head-to-head-widget"
+}
