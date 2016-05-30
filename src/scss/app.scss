@@ -1,7 +1,9 @@
 //Main scss file
-
+//Included compass mixins
+@import 'compass/css3';
 //Included variables, mixins and layout
 @import 'app-base-all';
+@import 'plugins/animation';
 
 //Included widget related styles
 @import 'widget/variables';

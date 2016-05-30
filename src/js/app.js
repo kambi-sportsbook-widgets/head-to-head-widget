@@ -59,7 +59,7 @@
          var homeTeam = data.homeParticipant.participantName;
          var awayTeam = data.awayParticipant.participantName;
 
-         data.lastEvents.forEach(function ( lastEvent ) {
+         data.lastEvents.forEach(function ( lastEvent, i ) {
 
             // Creating the item with the relevant data for each event
             var item = {
@@ -80,16 +80,17 @@
                item.scoreOnRight = item.homeScore;
             }
 
-            lastEvents.push(item);
-         });
-
-         // Iterating through the scores and pushing them to the allScores array
-         for ( var i = 0; i < data.lastEvents.length; i++ ) {
-            for ( var j = 0; j < data.lastEvents[i].scores.length; j++ ) {
-               allScores.push(data.lastEvents[i].scores[j].homeScore);
-               allScores.push(data.lastEvents[i].scores[j].awayScore);
+            for ( var j = 0; j < lastEvent.scores.length; j++ ) {
+               if ( lastEvent.scores[j].hasOwnProperty('homeScore') && lastEvent.scores[j].hasOwnProperty('awayScore') ) {
+                  allScores.push(lastEvent.scores[j].homeScore);
+                  allScores.push(lastEvent.scores[j].awayScore);
+               }
             }
-         }
+
+            if ( lastEvent.scores.length && lastEvent.scores[0].hasOwnProperty('homeScore') && lastEvent.scores[0].hasOwnProperty('awayScore') ) {
+               lastEvents.push(item);
+            }
+         });
 
          // Getting the highest value among the scores
          var getScoresMax = function ( array ) {
