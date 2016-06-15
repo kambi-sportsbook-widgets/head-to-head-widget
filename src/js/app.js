@@ -2,9 +2,6 @@
    'use strict';
 
    var HeadToHead = CoreLibrary.Component.subclass({
-      defaultArgs: {
-         title: 'Head to Head'
-      },
 
       constructor () {
          CoreLibrary.Component.apply(this, arguments);
