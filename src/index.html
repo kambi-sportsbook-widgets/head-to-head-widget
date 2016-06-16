@@ -40,10 +40,10 @@
    <main class="KambiWidget-font l-flexbox l-vertical l-mb-12" rv-each-event="data">
       <div class="kw-teams l-flexbox l-flex-1 l-pl-16 l-pr-16 l-mb-6">
          <div data-item-attr="home" class="l-flexbox l-flex-1 l-pack-start l-align-center l-pr-6">
-            <div class="text-truncate">{event.homeTeam}</div>
+            <div class="text-truncate">{event.homeTeam | translate}</div>
          </div>
          <div data-item-attr="away" class="l-flexbox l-flex-1 l-pack-end l-align-center">
-            <div class="text-truncate">{event.awayTeam}</div>
+            <div class="text-truncate">{event.awayTeam | translate}</div>
          </div>
       </div>
       <!--Statistics-->
