@@ -1,42 +1,21 @@
 # head-to-head-widget
 
+![](https://github.com/kambi-sportsbook-widgets/head-to-head-widget/blob/master/screenshot.png?raw=true)
+
 Displays the meetup history of two teams
 
-## Configuration example:
+## Configuration
 
-__`client-widgets.js`__
-
+Arguments and default values:
 ```json
-
-...
-{
-    "order": 1,
-    "widgetId": "Event poll widget",
-    "args": {
-        "title": "Head to Head",
-        "eventId": "1002788509"        
-    }
-},
-...
-
+"args": {
+    
+}
 ```
 
-### The widget accepts the following arguments/s:
+1. `sport` - string - the sport name for events request
 
-- title [String]
 
- The title to show on the header of the widgets
+### Build Instructions
 
-- eventId [Number]
-
- Id of the event to get data from
-
-# Other tools
-
-For setting up sass maps, follow this tutorial https://www.hackmonkey.com/2014/sep/configuring-css-source-maps-compass
-
-To use Scss Lint, run "gem install scss_lint"
-
-# Changelog
-
-changelog can be found [here](CHANGELOG.md)
+Please refer to the [core-library](https://github.com/kambi-sportsbook-widgets/widget-core-library)

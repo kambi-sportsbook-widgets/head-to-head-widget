@@ -3,6 +3,10 @@
 
    var HeadToHead = CoreLibrary.Component.subclass({
 
+      defaultArgs: {
+         eventId: null
+      },
+
       constructor () {
          CoreLibrary.Component.apply(this, arguments);
       },
