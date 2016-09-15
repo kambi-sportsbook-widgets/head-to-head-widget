@@ -9,11 +9,11 @@ Displays the meetup history of two teams
 Arguments and default values:
 ```json
 "args": {
-    
+    "eventId": null
 }
 ```
 
-1. `sport` - string - the sport name for events request
+1. `eventId` - number - id of the event from which to get the last meetups from
 
 
 ### Build Instructions
