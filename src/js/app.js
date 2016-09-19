@@ -1,7 +1,5 @@
 import CoreLibrary from 'widget-core-library';
 
-console.log('CoreLibrary', CoreLibrary);
-
 CoreLibrary.development = true;
 
 export default (function () {

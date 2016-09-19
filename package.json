@@ -6,6 +6,7 @@
   "scripts": {
     "changelog": "changelog kambi-sportsbook-widgets/head-to-head-widget all -m > CHANGELOG.md",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build:test": "webpack --config ./node_modules/widget-build-tools/default.js",
     "build:prod": "webpack --config webpack.production.config.js --verbose --display-modules --display-error-details",
     "build:dev": "webpack-dev-server --hot --inline --config webpack.development.config.js"
   },
@@ -14,6 +15,8 @@
     "changelog": "latest",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.1.0",
     "eslint-loader": "^1.5.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "gulp": "^3.9.0",
