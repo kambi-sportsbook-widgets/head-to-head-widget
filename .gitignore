@@ -1,12 +1,1 @@
-.idea
-node_modules
-.awspublish-*
-.sass-cache/
-docs
-*.map
-bower_components
-/.project
-mockSetupData.json
-/src/transpiled/
-/dist/
-/resourcepaths.json
+./node_modules/widget-build-tools/.gitignore
