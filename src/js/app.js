@@ -39,7 +39,7 @@ export default (function () {
             .catch(function (error) {
                console.warn('Cannot load statistics data');
                CoreLibrary.widgetModule.removeWidget();
-            }.bind(this));
+            });
       },
 
       adjustHeight () {
