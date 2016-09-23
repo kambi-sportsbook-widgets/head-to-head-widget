@@ -8,37 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:test": "webpack --config ./node_modules/widget-build-tools/default.js",
     "build:prod": "webpack --config webpack.production.config.js --verbose --display-modules --display-error-details",
-    "build:dev": "webpack-dev-server --hot --inline --config webpack.development.config.js"
+    "build:dev": "webpack-dev-server --hot --inline --config ./node_modules/widget-build-tools/default.js"
   },
   "devDependencies": {
-    "babel-loader": "^6.2.5",
-    "changelog": "latest",
-    "copy-webpack-plugin": "^3.0.1",
-    "css-loader": "^0.25.0",
-    "eslint": "^3.5.0",
-    "eslint-config-airbnb": "^11.1.0",
-    "eslint-loader": "^1.5.0",
-    "eslint-plugin-import": "^1.15.0",
-    "eslint-plugin-jsx-a11y": "^2.2.2",
-    "eslint-plugin-react": "^6.3.0",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "gulp": "^3.9.0",
-    "html-loader": "^0.4.3",
-    "html-webpack-plugin": "^2.22.0",
-    "jshint-loader": "^0.8.3",
-    "node-sass": "^3.9.3",
-    "require-dir": "^0.3.0",
-    "sass-loader": "^4.0.2",
-    "style-loader": "^0.13.1",
-    "svg-url-loader": "^1.1.0",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.13.2",
-    "webpack-dev-middleware": "^1.6.1",
-    "webpack-dev-server": "^1.15.1",
-    "webpack-hot-middleware": "^2.12.2",
-    "webpack-validator": "^2.2.7",
-    "widget-build-tools": "git+ssh://git@github.com:kambi-sportsbook-widgets/widget-build-tools.git#v1.2.1",
-    "widget-core-library": "git+ssh://git@github.com/kambi-sportsbook-widgets/widget-core-library.git#KSBWI-710"
+    "widget-build-tools": "git+ssh://git@github.com:kambi-sportsbook-widgets/widget-build-tools.git#KSBWI-710"
   },
   "repository": {
     "type": "git",
@@ -50,6 +23,7 @@
   },
   "homepage": "https://github.com/kambi-sportsbook-widgets/head-to-head-widget#readme",
   "dependencies": {
-    "compass-mixins": "^0.12.10"
+    "compass-mixins": "^0.12.10",
+    "widget-core-library": "git+ssh://git@github.com/kambi-sportsbook-widgets/widget-core-library.git#KSBWI-710"
   }
 }
