@@ -13,52 +13,9 @@
    <meta name="apple-mobile-web-app-capable" content="yes">
    <meta name="apple-mobile-web-app-status-bar-style" content="black">
    <meta name="apple-mobile-web-app-title" content="">
-   <link rel="stylesheet" type="text/css" rv-href="widgetCss"/>
-   <script src="https://s3-eu-west-1.amazonaws.com/kambi-widgets/widget-third-party/v1.2.0/thirdparty.js"></script>
    <script src="https://c3-static.kambi.com/sb-mobileclient/widget-api/1.0.0.13/kambi-widget-api.js"></script>
 </head>
 <body class="kw-body KambiWidget-font" rv-style-display="onLoad">
-<div class="KambiWidget-card-background-color KambiWidget-card-text-color KambiWidget-card-border-color l-flexbox l-vertical l-expander" rv-cloat="loaded">
-   <header class="KambiWidget-font kw-header l-flexbox l-align-center l-pt-16 l-pb-16 l-pl-16">{'Head to head' | translate}</header>
-   <main class="KambiWidget-font l-flexbox l-vertical l-mb-12" rv-each-event="data">
-      <div class="kw-teams l-flexbox l-flex-1 l-pl-16 l-pr-16 l-mb-6">
-         <div data-item-attr="home" class="l-flexbox l-flex-1 l-pack-start l-align-center l-pr-6">
-            <div class="text-truncate">{event.homeTeam | translate}</div>
-         </div>
-         <div data-item-attr="away" class="l-flexbox l-flex-1 l-pack-end l-align-center">
-            <div class="text-truncate">{event.awayTeam | translate}</div>
-         </div>
-      </div>
-      <div class="kw-table-item KambiWidget-card-background-color--hoverable l-flexbox l-flex-1 l-pl-16 l-pr-16"
-           rv-anim-stagger="index" rv-each-score="event.lastEvents">
-         <div data-item-attr="home" class="l-flexbox l-align-center l-flex-1">
-            <div class="kw-score l-flexbox l-align-center l-pack-center l-pl-16 l-pr-16 ">
-               {score.scoreOnLeft}
-            </div>
-            <div class="l-flexbox kw-bar-wrapper l-flex-1 l-pack-end">
-               <div class="kw-bar-score l-flexbox"
-                    rv-class-lost-game="score.scoreOnLeft | < score.scoreOnRight"
-                    rv-class-drawn-game="score.scoreOnLeft | === score.scoreOnRight"
-                    rv-class-won-game="score.scoreOnLeft | > score.scoreOnRight"
-                    rv-width="score.scoreOnLeft | / event.maxScore">
-               </div>
-            </div>
-         </div>
-         <div data-item-attr="away" class="l-flexbox l-align-center l-flex-1">
-            <div class="kw-score l-flexbox l-align-center l-pack-center l-pl-16 l-pr-16 ">
-               {score.scoreOnRight}
-            </div>
-            <div class="l-flexbox kw-bar-wrapper l-flex-1 l-pack-start">
-               <div class="kw-bar-score l-flexbox"
-                    rv-class-lost-game="score.scoreOnLeft | > score.scoreOnRight"
-                    rv-class-drawn-game="score.scoreOnLeft | === score.scoreOnRight"
-                    rv-class-won-game="score.scoreOnLeft | < score.scoreOnRight"
-                    rv-width="score.scoreOnRight | / event.maxScore">
-               </div>
-            </div>
-         </div>
-      </div>
-   </main>
-</div>
+   <div id="root"></div>
 </body>
 </html>

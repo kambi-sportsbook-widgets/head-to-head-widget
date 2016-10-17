@@ -38,7 +38,7 @@
    min-height: 24px;
 
    [data-item-attr="home"] {
-      @include box-orient(row-reverse);
+      @include flex-direction(row-reverse);
 
       .kw-score {
          position: relative;

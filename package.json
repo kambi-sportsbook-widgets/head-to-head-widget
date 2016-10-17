@@ -4,14 +4,22 @@
   "description": "Head to Head Widget",
   "main": "dist/index.html",
   "scripts": {
-    "changelog": "changelog kambi-sportsbook-widgets/head-to-head-widget all -m > CHANGELOG.md",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:test": "webpack --config ./node_modules/widget-build-tools/default.js",
-    "build:prod": "webpack --config webpack.production.config.js --verbose --display-modules --display-error-details",
-    "build:dev": "webpack-dev-server --hot --inline --config ./node_modules/widget-build-tools/default.js"
+    "clean": "kambi-widgets-cli clean",
+    "prestart": "npm run clean",
+    "start": "kambi-widgets-cli start",
+    "prebuild": "npm run clean",
+    "build": "kambi-widgets-cli build",
+    "preversion": "kambi-widgets-cli preversion",
+    "postversion": "kambi-widgets-cli postversion"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "widget-components": "git+ssh://git@github.com/kambi-sportsbook-widgets/widget-components.git#v1.0.0",
+    "widget-core-library": "git+ssh://git@github.com/kambi-sportsbook-widgets/widget-core-library.git#v3.1.0"
   },
   "devDependencies": {
-    "widget-build-tools": "git+ssh://git@github.com:kambi-sportsbook-widgets/widget-build-tools.git#KSBWI-710"
+    "widget-build-tools": "git+ssh://git@github.com:kambi-sportsbook-widgets/widget-build-tools.git#v2.1.1"
   },
   "repository": {
     "type": "git",
@@ -21,9 +29,5 @@
   "bugs": {
     "url": "https://github.com/kambi-sportsbook-widgets/head-to-head-widget/issues"
   },
-  "homepage": "https://github.com/kambi-sportsbook-widgets/head-to-head-widget#readme",
-  "dependencies": {
-    "compass-mixins": "^0.12.10",
-    "widget-core-library": "git+ssh://git@github.com/kambi-sportsbook-widgets/widget-core-library.git#KSBWI-710"
-  }
+  "homepage": "https://github.com/kambi-sportsbook-widgets/head-to-head-widget#readme"
 }
