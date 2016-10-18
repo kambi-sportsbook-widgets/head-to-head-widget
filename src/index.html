@@ -8,88 +8,14 @@
    <meta name="HandheldFriendly" content="True">
    <meta name="MobileOptimized" content="320">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-
    <meta name="fragment" content="!"/>
-
    <meta name="mobile-web-app-capable" content="yes">
    <meta name="apple-mobile-web-app-capable" content="yes">
    <meta name="apple-mobile-web-app-status-bar-style" content="black">
    <meta name="apple-mobile-web-app-title" content="">
-
-   <!-- build:css -->
-   <!-- This section will be replaced in the gulp build process -->
-   <link rel="stylesheet" type="text/css" href="transpiled/css/app.css"/>
-   <!-- endbuild -->
-
-   <link rel="stylesheet" type="text/css" rv-href="widgetCss"/>
-
-   <!-- build:third-party-libs -->
-   <script src="https://s3-eu-west-1.amazonaws.com/kambi-widgets/widget-third-party/v1.2.0/thirdparty.js"></script>
-   <!-- endbuild -->
-
-   <!-- build:kambi-widget-api -->
-   <!-- This section will be replaced in the gulp build process -->
    <script src="https://c3-static.kambi.com/sb-mobileclient/widget-api/1.0.0.13/kambi-widget-api.js"></script>
-   <!-- endbuild -->
 </head>
 <body class="kw-body KambiWidget-font" rv-style-display="onLoad">
-<div class="KambiWidget-card-background-color KambiWidget-card-text-color KambiWidget-card-border-color l-flexbox l-vertical l-expander" rv-cloak>
-   <!--Header-->
-   <header class="KambiWidget-font kw-header l-flexbox l-align-center l-pt-16 l-pb-16 l-pl-16">{'Head to head' | translate}</header>
-   <!--Main-->
-   <main class="KambiWidget-font l-flexbox l-vertical l-mb-12" rv-each-event="data">
-      <div class="kw-teams l-flexbox l-flex-1 l-pl-16 l-pr-16 l-mb-6">
-         <div data-item-attr="home" class="l-flexbox l-flex-1 l-pack-start l-align-center l-pr-6">
-            <div class="text-truncate">{event.homeTeam | translate}</div>
-         </div>
-         <div data-item-attr="away" class="l-flexbox l-flex-1 l-pack-end l-align-center">
-            <div class="text-truncate">{event.awayTeam | translate}</div>
-         </div>
-      </div>
-      <!--Statistics-->
-      <div class="kw-table-item KambiWidget-card-background-color--hoverable l-flexbox l-flex-1 l-pl-16 l-pr-16"
-           rv-anim-stagger="index" rv-each-score="event.lastEvents">
-         <div data-item-attr="home" class="l-flexbox l-align-center l-flex-1">
-            <div class="kw-score l-flexbox l-align-center l-pack-center l-pl-16 l-pr-16 ">
-               {score.scoreOnLeft}
-            </div>
-            <div class="l-flexbox kw-bar-wrapper l-flex-1 l-pack-end">
-               <div class="kw-bar-score l-flexbox"
-                    rv-class-lost-game="score.scoreOnLeft | < score.scoreOnRight"
-                    rv-class-drawn-game="score.scoreOnLeft | === score.scoreOnRight"
-                    rv-class-won-game="score.scoreOnLeft | > score.scoreOnRight"
-                    rv-width="score.scoreOnLeft | / event.maxScore">
-               </div>
-            </div>
-         </div>
-         <div data-item-attr="away" class="l-flexbox l-align-center l-flex-1">
-            <div class="kw-score l-flexbox l-align-center l-pack-center l-pl-16 l-pr-16 ">
-               {score.scoreOnRight}
-            </div>
-            <div class="l-flexbox kw-bar-wrapper l-flex-1 l-pack-start">
-               <div class="kw-bar-score l-flexbox"
-                    rv-class-lost-game="score.scoreOnLeft | > score.scoreOnRight"
-                    rv-class-drawn-game="score.scoreOnLeft | === score.scoreOnRight"
-                    rv-class-won-game="score.scoreOnLeft | < score.scoreOnRight"
-                    rv-width="score.scoreOnRight | / event.maxScore">
-               </div>
-            </div>
-         </div>
-      </div>
-   </main>
-</div>
-
-<!-- build:js -->
-<!-- This section will be replaced in the gulp build process -->
-<script src="/node_modules/widget-core-library/src/transpiled/js/coreLibrary.js"></script>
-<script src="/node_modules/widget-core-library/src/transpiled/js/Module/widgetModule.js"></script>
-<script src="/node_modules/widget-core-library/src/transpiled/js/Module/offeringModule.js"></script>
-<script src="/node_modules/widget-core-library/src/transpiled/js/Module/statisticsModule.js"></script>
-<script src="/node_modules/widget-core-library/src/transpiled/js/Module/translationModule.js"></script>
-<script src="/node_modules/widget-core-library/src/transpiled/js/Component/Component.js"></script>
-<script src="/node_modules/widget-core-library/src/transpiled/js/Component/PaginationComponent/PaginationComponent.js"></script>
-<script src="transpiled/js/app.js"></script>
-<!-- endbuild -->
-
+   <div id="root"></div>
 </body>
 </html>
