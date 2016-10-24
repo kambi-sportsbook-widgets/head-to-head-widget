@@ -12,6 +12,14 @@
    font-size: 14px;
    line-height: 24px;
    min-height: 24px;
+
+   [data-item-attr="home"] {
+      @extend .l-pr-6;
+   }
+
+   [data-item-attr="away"] {
+      @include justify-content(flex-end);
+   }
 }
 
 .kw-score {
@@ -41,6 +49,8 @@
       @include flex-direction(row-reverse);
 
       .kw-score {
+         @include justify-content(center);
+
          position: relative;
          &:after {
             content: '-';
@@ -51,7 +61,12 @@
             width: 3px;
          }
       }
+
+      .kw-bar-wrapper {
+         @include justify-content(flex-end);
+      }
    }
+
    // Default color for the bar
    .lost-game {
       background-color: $lost-color;

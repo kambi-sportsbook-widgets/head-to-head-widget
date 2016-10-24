@@ -13,10 +13,10 @@ const ScoreBar = ({ ourScore, theirScore, maxScore, side }) => {
 
    return (
       <div data-item-attr={side} className="kw-table-item l-flexbox l-align-center l-flex-1">
-         <div className="kw-score l-flexbox l-align-center l-pack-center l-pl-16 l-pr-16">
+         <div className="kw-score l-flexbox l-align-center l-pl-16 l-pr-16">
             {ourScore}
          </div>
-         <div className="l-flexbox kw-bar-wrapper l-flex-1 l-pack-end">
+         <div className="l-flexbox kw-bar-wrapper l-flex-1">
             <div
                className={classList.join(' ')}
                style={{ width: `${(ourScore / maxScore * 100)}%` }}

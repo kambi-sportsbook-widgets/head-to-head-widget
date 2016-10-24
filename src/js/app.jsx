@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { coreLibrary } from 'widget-core-library';
-import HeadToHeadWidget from './HeadToHeadWidget';
+import { coreLibrary, widgetModule } from 'widget-core-library';
+import HeadToHeadWidget from './Components/HeadToHeadWidget';
+import store from './Store/store';
 
 coreLibrary.init({
-   eventId: null
+   eventId: 1003539326
 })
-.then(
-   () => {
-      ReactDOM.render(<HeadToHeadWidget args={coreLibrary.args} />, document.getElementById('root'));
-   },
-   error => console.error(error)
-);
+.then(() => store.getEventStatistics(coreLibrary.args.eventId))
+.then((events) => {
+   document.getElementsByTagName('body')[0].style.display = 'block';
+
+   ReactDOM.render(
+      <HeadToHeadWidget events={events} />,
+      document.getElementById('root')
+   );
+})
+.catch((error) => {
+   console.error(error);
+   widgetModule.removeWidget();
+});
