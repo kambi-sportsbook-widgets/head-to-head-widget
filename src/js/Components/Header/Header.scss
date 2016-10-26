@@ -1,7 +1,7 @@
 @import '../../shared';
 
 :local(.general) {
-   @include smoothing();
+   @include smoothing;
    font-weight: bold;
    width: 100%;
    text-align: center;

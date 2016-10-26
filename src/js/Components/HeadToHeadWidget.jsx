@@ -76,10 +76,12 @@ class HeadToHeadWidget extends React.Component {
             </BoxContainer>
             <BoxContainer>
                <Header title="Head to Head" />
-               <ScoreContainer>
-                  <ScoreIndicator score={5} />
-               </ScoreContainer>
             </BoxContainer>
+            <Header title="Head to Head" />
+            <ScoreContainer>
+               <ScoreIndicator name="Murray, Andrey" score={2} />
+               <ScoreIndicator name="Federer, Roger" reverse score={2} />
+            </ScoreContainer>
             <BoxContainer />
             <BoxContainer />
          </div>

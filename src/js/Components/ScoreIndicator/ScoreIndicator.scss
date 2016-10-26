@@ -1,6 +1,25 @@
 @import '../../shared';
 
-:local(.general) {
+
+:local(.container) {
+   display:flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+}
+
+:local(.containerReversed) {
+   display:flex;
+   flex-direction: row-reverse;
+   flex-wrap: nowrap;
+}
+
+:local(.name) {
+   @include smoothing();
+   line-height: 40px;
+   font-size: 16px;
+}
+
+:local(.scoreBox) {
    border-radius: 2px;
    text-align: center;
    background-color: #333333;
@@ -8,7 +27,7 @@
    height: 40px;
 }
 
-:local(.score) {
+:local(.scoreValue) {
    @include smoothing();
    font-size: 24px;
    font-weight: bold;
