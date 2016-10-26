@@ -1,1 +1,15 @@
-./node_modules/widget-build-tools/.gitignore
+.idea
+node_modules
+.awspublish-*
+.sass-cache/
+docs
+*.map
+bower_components
+/.project
+mockSetupData.json
+/dist/
+npm-debug.log
+.editorconfig
+.eslintrc
+.scss-lint.yml
+.DS_Store

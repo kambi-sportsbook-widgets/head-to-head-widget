@@ -1,11 +1,11 @@
-import { coreLibrary, widgetModule, translationModule, statisticsModule } from 'widget-core-library';
+import { coreLibrary, widgetModule, translationModule, statisticsModule } from 'kambi-widget-core-library';
 
 /**
  * Builds statistics information object for usage in template.
  * @param {object} statistics Statistics entity
  * @returns {object[]}
  */
-const parseDataInfo = function(statistics) {
+const parseDataInfo = function (statistics) {
    var dataInfo = [];
    var lastEvents = [];
    var allScores = [];
@@ -54,7 +54,7 @@ const parseDataInfo = function(statistics) {
    return dataInfo;
 };
 
-const getEventStatistics = function(eventId) {
+const getEventStatistics = function (eventId) {
    if (!eventId) {
       console.warn('eventId set from pageParam');
       eventId = coreLibrary.pageInfo.pageParam;
@@ -63,7 +63,7 @@ const getEventStatistics = function(eventId) {
    }
 
    return statisticsModule.getHeadToHeadStatistics(eventId)
-      .then(parseDataInfo);
+   .then(parseDataInfo);
 };
 
 export default { getEventStatistics };

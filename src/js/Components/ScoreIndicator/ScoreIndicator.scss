@@ -1,0 +1,17 @@
+@import '../../shared';
+
+:local(.general) {
+   border-radius: 2px;
+   text-align: center;
+   background-color: #333333;
+   width: 38px;
+   height: 40px;
+}
+
+:local(.score) {
+   @include smoothing();
+   font-size: 24px;
+   font-weight: bold;
+   line-height: 40px;
+   color: #FFFFFF;
+}

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { coreLibrary, widgetModule } from 'widget-core-library';
+import { coreLibrary, widgetModule } from 'kambi-widget-core-library';
 import HeadToHeadWidget from './Components/HeadToHeadWidget';
 import store from './Store/store';
 
 coreLibrary.init({
-   eventId: 1003539326
+   eventId: 1003605127
 })
 .then(() => store.getEventStatistics(coreLibrary.args.eventId))
 .then((events) => {

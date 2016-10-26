@@ -1,10 +1,10 @@
 import React from 'react';
-import { coreLibrary, widgetModule, translationModule, statisticsModule } from 'widget-core-library';
-import Event from './Event';
-import ScoreBar from './ScoreBar';
-import Scores from './Scores';
-import Team from './Team';
-import Teams from './Teams';
+import { coreLibrary, widgetModule, translationModule, statisticsModule } from 'kambi-widget-core-library';
+import Header from './Header/Header';
+import WinLooseIndicator from './WinLooseIndicator/WinLooseIndicator';
+import ScoreContainer from './ScoreContainer/ScoreContainer';
+import BoxContainer from './BoxContainer/BoxContainer';
+import ScoreIndicator from './ScoreIndicator/ScoreIndicator';
 
 /**
  * Height of header element
@@ -60,27 +60,51 @@ class HeadToHeadWidget extends React.Component {
       const t = translationModule.getTranslation.bind(translationModule);
 
       return (
-         <div className="KambiWidget-card-background-color KambiWidget-card-text-color KambiWidget-card-border-color l-flexbox l-vertical l-expander">
-            <header className="KambiWidget-font kw-header l-flexbox l-align-center l-pt-16 l-pb-16 l-pl-16">{t('Head to head')}</header>
-            {this.props.events.map((event) => {
-               return (
-                  <Event key={event.eventId}>
-                     <Teams>
-                        <Team name={event.homeTeam} side="home" />
-                        <Team name={event.awayTeam} side="away" />
-                     </Teams>
-                     {event.lastEvents.map((score) => {
-                        return (
-                           <Scores key={score.start}>
-                              <ScoreBar side="home" ourScore={score.scoreOnLeft} theirScore={score.scoreOnRight} maxScore={event.maxScore} />
-                              <ScoreBar side="away" ourScore={score.scoreOnRight} theirScore={score.scoreOnLeft} maxScore={event.maxScore} />
-                           </Scores>
-                        );
-                     })}
-                  </Event>
-               );
-            })}
+         <div>
+            <BoxContainer>
+               <div>
+                  <Header title="Form" />
+                  <ScoreContainer>
+                     <WinLooseIndicator score="win" />
+                     <WinLooseIndicator score="win" />
+                     <WinLooseIndicator score="draw" />
+                     <WinLooseIndicator score="draw" />
+                     <WinLooseIndicator score="lost" />
+                     <WinLooseIndicator score="lost" />
+                  </ScoreContainer>
+               </div>
+            </BoxContainer>
+            <BoxContainer>
+               <Header title="Head to Head" />
+               <ScoreContainer>
+                  <ScoreIndicator score={5} />
+               </ScoreContainer>
+            </BoxContainer>
+            <BoxContainer />
+            <BoxContainer />
          </div>
+         /* <div className="KambiWidget-card-background-color KambiWidget-card-text-color KambiWidget-card-border-color l-flexbox l-vertical l-expander">
+          <header className="KambiWidget-font kw-header l-flexbox l-align-center l-pt-16 l-pb-16 l-pl-16">{t('Head to head')}</header>
+
+          {this.props.events.map((event) => {
+          return (
+          <Event key={event.eventId}>
+          <Teams>
+          <Team name={event.homeTeam} side="home" />
+          <Team name={event.awayTeam} side="away" />
+          </Teams>
+          {event.lastEvents.map((score) => {
+          return (
+          <Scores key={score.start}>
+          <ScoreBar side="home" ourScore={score.scoreOnLeft} theirScore={score.scoreOnRight} maxScore={event.maxScore} />
+          <ScoreBar side="away" ourScore={score.scoreOnRight} theirScore={score.scoreOnLeft} maxScore={event.maxScore} />
+          </Scores>
+          );
+          })}
+          </Event>
+          );
+          })}
+          </div> */
       );
    }
 
