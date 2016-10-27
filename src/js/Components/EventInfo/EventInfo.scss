@@ -1,0 +1,11 @@
+@import '../../shared';
+
+:local(.general) {
+   @include smoothing;
+}
+
+:local(.eventName) {
+   @include smoothing;
+   margin-top: 10px;
+   text-align: center;
+}

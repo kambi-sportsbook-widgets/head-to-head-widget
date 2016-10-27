@@ -3,7 +3,7 @@ import styles from './ScoreIndicator.scss';
 
 const ScoreIndicator = ({ name, score, reverse }) => {
 
-   const getContainerClass = () => {
+   const getContainerClasses = () => {
       let name = styles.container;
       if (reverse) {
          name = styles.containerReversed;
@@ -11,9 +11,18 @@ const ScoreIndicator = ({ name, score, reverse }) => {
       return name;
    };
 
+   const getNameClass = () => {
+      let name = styles.name;
+      if (reverse) {
+         name = styles.nameReversed;
+      }
+      return name;
+   };
+
+
    return (
-      <div className={getContainerClass()}>
-         <div className={styles.name}>{ name }</div>
+      <div className={getContainerClasses()}>
+         <div className={getNameClass()}>{ name }</div>
          <div className={styles.scoreBox}>
             <span className={styles.scoreValue}>{ score }</span>
          </div>
@@ -23,7 +32,7 @@ const ScoreIndicator = ({ name, score, reverse }) => {
 ScoreIndicator.propTypes = {
    score: React.PropTypes.number.isRequired,
    name: React.PropTypes.string.isRequired,
-   reverse: React.PropTypes.Boolean
+   reverse: React.PropTypes.bool
 };
 
 export default ScoreIndicator;

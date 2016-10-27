@@ -1,4 +1,4 @@
-import { coreLibrary, widgetModule, translationModule, statisticsModule } from 'kambi-widget-core-library';
+import { coreLibrary, widgetModule, translationModule, offeringModule, statisticsModule } from 'kambi-widget-core-library';
 
 /**
  * Builds statistics information object for usage in template.

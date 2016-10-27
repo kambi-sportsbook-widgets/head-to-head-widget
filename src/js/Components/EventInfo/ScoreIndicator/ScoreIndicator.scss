@@ -1,22 +1,33 @@
-@import '../../shared';
-
+@import '../../../shared';
 
 :local(.container) {
    display:flex;
    flex-direction: row;
    flex-wrap: nowrap;
+   align-items: center;
 }
 
 :local(.containerReversed) {
    display:flex;
    flex-direction: row-reverse;
    flex-wrap: nowrap;
+   align-items: center;
 }
 
 :local(.name) {
    @include smoothing();
-   line-height: 40px;
    font-size: 16px;
+   display: block;
+   text-align: right;
+   margin-right: 17px;
+}
+
+:local(.nameReversed) {
+   @include smoothing();
+   font-size: 16px;
+   display: block;
+   text-align: left;
+   margin-left: 17px;
 }
 
 :local(.scoreBox) {
@@ -25,6 +36,7 @@
    background-color: #333333;
    width: 38px;
    height: 40px;
+   margin: 0 5px;
 }
 
 :local(.scoreValue) {

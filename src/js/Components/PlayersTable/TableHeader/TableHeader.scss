@@ -1,0 +1,23 @@
+@import '../../../shared';
+
+:local(.header) {
+   @include smoothing();
+   display: flex;
+   padding: 0 16px;
+   font-size: 12px;
+   justify-content: space-between;
+   flex-flow: row nowrap;
+   vertical-align: middle;
+   background: #F5F5F5;
+   height: 36px;
+   width: 100%;
+}
+
+:local(.header) > * {
+   color: #999999;
+   line-height: 36px;
+}
+
+:local(.header) > .strong {
+   font-weight: bold;
+}

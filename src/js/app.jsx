@@ -10,7 +10,6 @@ coreLibrary.init({
 .then(() => store.getEventStatistics(coreLibrary.args.eventId))
 .then((events) => {
    document.getElementsByTagName('body')[0].style.display = 'block';
-
    ReactDOM.render(
       <HeadToHeadWidget events={events} />,
       document.getElementById('root')

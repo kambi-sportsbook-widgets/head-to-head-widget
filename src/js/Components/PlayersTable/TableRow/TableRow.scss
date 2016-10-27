@@ -1,0 +1,42 @@
+@import '../../../shared';
+
+:local(.general) {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+   border-bottom: #ECECEC 1px solid;
+   width: 100%;
+   height: 46px;
+}
+
+:local(.index) {
+   @include smoothing;
+   color: #666666;
+   font-size: 14px;
+   line-height: 46px;
+   flex-grow: 1;
+   flex-basis: 0;
+   vertical-align: middle;
+
+}
+
+:local(.points) {
+   @include smoothing;
+   color: #666666;
+   font-size: 14px;
+   line-height: 46px;
+   flex-grow: 1;
+   flex-basis: 0;
+   vertical-align: middle;
+}
+
+:local(.name) {
+   @include smoothing;
+   color: #666666;
+   font-size: 14px;
+   font-weight: bold;
+   line-height: 46px;
+   flex-grow: 10;
+   flex-basis: 0;
+   vertical-align: middle;
+}
