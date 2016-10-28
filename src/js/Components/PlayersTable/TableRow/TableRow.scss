@@ -31,7 +31,7 @@
    border-left: 5px solid transparent;
    border-right: 5px solid transparent;
    border-bottom: 10px solid #B8E986;
-   transform: translate(-15px,-18px);
+   transform: translate(-15px,11px);
 }
 
 :local(.triangleDown) {
@@ -39,7 +39,7 @@
    border-left: 5px solid transparent;
    border-right: 5px solid transparent;
    border-top: 10px solid #FF3A52;
-   transform: translate(-15px, 18px);
+   transform: translate(-15px, 11px);
 }
 
 :local(.name) {
@@ -48,7 +48,7 @@
    color: #666666;
    font-size: 14px;
    font-weight: bold;
-   line-height: 46px;
+   line-height: 23px;
    flex-grow: 8;
    text-align: left;
    vertical-align: middle;
