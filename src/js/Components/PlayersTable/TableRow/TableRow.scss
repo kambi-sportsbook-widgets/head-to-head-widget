@@ -23,23 +23,26 @@
 
 :local(.arrow) {
    display: table-cell;
-   width: 12px;
+   width: 10px;
+   position: relative;
 }
 
 :local(.triangleUp) {
-   display: inline-block;
+   position: absolute;
+   left: -15px;
+   top: 18px;
    border-left: 5px solid transparent;
    border-right: 5px solid transparent;
    border-bottom: 10px solid #B8E986;
-   transform: translate(-15px,11px);
 }
 
 :local(.triangleDown) {
-   display: inline-block;
+   position: absolute;
+   left: -15px;
+   top: 18px;
    border-left: 5px solid transparent;
    border-right: 5px solid transparent;
    border-top: 10px solid #FF3A52;
-   transform: translate(-15px, 11px);
 }
 
 :local(.name) {

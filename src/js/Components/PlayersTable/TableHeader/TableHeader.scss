@@ -9,15 +9,17 @@
    flex-flow: row nowrap;
    vertical-align: middle;
    background: #F5F5F5;
+   border: #ECECEC 1px solid;
    height: 36px;
    width: 100%;
 }
 
-:local(.header) > * {
+:local(.header) > .element {
+   text-overflow: ellipsis;
    color: #999999;
    line-height: 36px;
-}
 
-:local(.header) > .strong {
-   font-weight: bold;
+   &--strong {
+      font-weight: bold;
+   }
 }
