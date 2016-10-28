@@ -1,8 +1,9 @@
 @import '../../../shared';
 
 :local(.general) {
-   display: flex;
-   flex-flow: row nowrap;
+   display: table;
+   table-layout: fixed;
+   flex-flow: row wrap;
    justify-content: space-between;
    border-bottom: #ECECEC 1px solid;
    width: 100%;
@@ -11,34 +12,56 @@
 }
 
 :local(.index) {
+   display: table-cell;
    @include smoothing;
    color: #666666;
    font-size: 14px;
    line-height: 46px;
-   flex-grow: 1;
-   flex-basis: 0;
    vertical-align: middle;
-
+   width: 40px;
 }
 
-:local(.points) {
-   @include smoothing;
-   color: #666666;
-   font-weight: bold;
-   font-size: 14px;
-   line-height: 46px;
-   flex-grow: 1;
-   flex-basis: 0;
-   vertical-align: middle;
+:local(.arrow) {
+   display: table-cell;
+   width: 12px;
+}
+
+:local(.triangleUp) {
+   display: inline-block;
+   border-left: 5px solid transparent;
+   border-right: 5px solid transparent;
+   border-bottom: 10px solid #B8E986;
+   transform: translate(-15px,-18px);
+}
+
+:local(.triangleDown) {
+   display: inline-block;
+   border-left: 5px solid transparent;
+   border-right: 5px solid transparent;
+   border-top: 10px solid #FF3A52;
+   transform: translate(-15px, 18px);
 }
 
 :local(.name) {
+   display: table-cell;
    @include smoothing;
    color: #666666;
    font-size: 14px;
    font-weight: bold;
    line-height: 46px;
-   flex-grow: 10;
-   flex-basis: 0;
+   flex-grow: 8;
+   text-align: left;
+   vertical-align: middle;
+}
+
+:local(.points) {
+   display: table-cell;
+   @include smoothing;
+   color: #666666;
+   font-weight: bold;
+   font-size: 14px;
+   line-height: 46px;
+   flex-grow: 1;
+   text-align: right;
    vertical-align: middle;
 }
