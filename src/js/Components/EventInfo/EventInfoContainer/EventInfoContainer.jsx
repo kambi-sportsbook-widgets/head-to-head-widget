@@ -6,7 +6,7 @@ const EventInfoContainer = ({ children }) => {
 };
 
 EventInfoContainer.propTypes = {
-   children: React.PropTypes.object
+   children: React.PropTypes.arrayOf(React.PropTypes.element).isRequired
 };
 
 export default EventInfoContainer;

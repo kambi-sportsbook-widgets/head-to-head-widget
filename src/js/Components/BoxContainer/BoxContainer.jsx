@@ -6,7 +6,7 @@ const BoxContainer = ({ children }) => {
 };
 
 BoxContainer.propTypes = {
-   children: React.PropTypes.object
+   children: React.PropTypes.node
 };
 
 export default BoxContainer;
