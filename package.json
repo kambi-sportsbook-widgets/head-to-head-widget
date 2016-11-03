@@ -19,7 +19,7 @@
     "react-dom": "^15.3.2"
   },
   "devDependencies": {
-    "kambi-widget-build-tools": "^2.2.7"
+    "kambi-widget-build-tools": "^2.2.8"
   },
   "repository": {
     "type": "git",

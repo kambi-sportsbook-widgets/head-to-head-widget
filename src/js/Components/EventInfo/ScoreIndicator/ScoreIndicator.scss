@@ -7,29 +7,6 @@
    align-items: center;
 }
 
-:local(.containerReversed) {
-   display:flex;
-   flex-direction: row-reverse;
-   flex-wrap: nowrap;
-   align-items: center;
-}
-
-:local(.name) {
-   @include smoothing();
-   font-size: 16px;
-   display: block;
-   text-align: right;
-   margin-right: 17px;
-}
-
-:local(.nameReversed) {
-   @include smoothing();
-   font-size: 16px;
-   display: block;
-   text-align: left;
-   margin-left: 17px;
-}
-
 :local(.scoreBox) {
    border-radius: 2px;
    text-align: center;

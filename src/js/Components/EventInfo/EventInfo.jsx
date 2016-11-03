@@ -7,8 +7,10 @@ const EventInfo = ({ homeName, homeScore, awayName, awayScore, eventName }) => {
    return (
       <div>
          <EventInfoContainer>
-            <ScoreIndicator name={homeName} score={homeScore} />
-            <ScoreIndicator name={awayName} reverse score={awayScore} />
+            <div className={styles.homeName}>{homeName}</div>
+            <ScoreIndicator score={homeScore} />
+            <ScoreIndicator score={awayScore} />
+            <div className={styles.awayName}>{awayName}</div>
          </EventInfoContainer>
          { <div className={styles.eventName}>{eventName}</div> }
       </div>)

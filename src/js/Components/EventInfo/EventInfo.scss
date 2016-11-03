@@ -1,11 +1,32 @@
 @import '../../shared';
 
 :local(.general) {
-   @include smoothing;
+
+}
+
+:local(.name) {
+   font-size: 16px;
+   display: block;
+   text-align: right;
+   margin-right: 17px;
+}
+
+:local(.awayName) {
+   flex: 1;
+   font-size: 16px;
+   text-align: left;
+   margin-left: 17px;
+}
+
+:local(.homeName) {
+   flex: 1;
+   font-size: 16px;
+   text-align: right;
+   margin-right: 17px;
 }
 
 :local(.eventName) {
-   @include smoothing;
+   font-size: 12px;
    margin-top: 10px;
    text-align: center;
 }
