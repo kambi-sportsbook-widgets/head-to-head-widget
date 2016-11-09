@@ -24,5 +24,17 @@
    "Switzerland": "Schweiz",
    "Turkey": "Turkiet",
    "Ukraine": "Ukraina",
-   "Wales": "Wales"
+   "Wales": "Wales",
+   "month0": "januari",
+   "month1": "februari",
+   "month2": "mars",
+   "month3": "april",
+   "month4": "maj",
+   "month5": "juni",
+   "month6": "juli",
+   "month7": "augusti",
+   "month8": "september",
+   "month9": "oktober",
+   "month10": "november",
+   "month11": "december"
 }

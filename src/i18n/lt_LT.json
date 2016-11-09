@@ -24,5 +24,17 @@
    "Switzerland": "Šveicarija",
    "Turkey": "Turkija",
    "Ukraine": "Ukraina",
-   "Wales": "Velsas"
+   "Wales": "Velsas",
+   "month0": "Sausis",
+   "month1": "Vasaris",
+   "month2": "Kovas",
+   "month3": "Balandis",
+   "month4": "Gegužė",
+   "month5": "Birželis",
+   "month6": "Liepa",
+   "month7": "Rugpjūtis",
+   "month8": "Rugsėjis",
+   "month9": "Spalis",
+   "month10": "Lapkritis",
+   "month11": "Gruodis"
 }

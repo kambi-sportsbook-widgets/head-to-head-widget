@@ -24,5 +24,17 @@
    "Switzerland": "Switzerland",
    "Turkey": "Turkey",
    "Ukraine": "Ukraine",
-   "Wales": "Wales"
+   "Wales": "Wales",
+   "month0": "Janvāris",
+   "month1": "Februāris",
+   "month2": "Marts",
+   "month3": "Aprīlis",
+   "month4": "Maijs",
+   "month5": "Jūnijs",
+   "month6": "Jūlijs",
+   "month7": "Augusts",
+   "month8": "Septembris",
+   "month9": "Oktobris",
+   "month10": "Novembris",
+   "month11": "Decembris"
 }

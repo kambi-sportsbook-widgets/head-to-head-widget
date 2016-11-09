@@ -11,12 +11,26 @@ class HeadToHeadWidget extends React.Component {
       widgetModule.enableWidgetTransition(true);
    }
 
+   /**
+    * Called after component mounts
+    */
+   componentDidMount() {
+      widgetModule.adaptWidgetHeight();
+   }
+   /**
+    * Called after updating component's DOM.
+    */
+   componentDidUpdate() {
+      widgetModule.adaptWidgetHeight();
+   }
+
    render() {
       const t = translationModule.getTranslation.bind(translationModule);
       return (
          <div>
             <Header title={t('Head to head')} />
             { this.props.events.map((event)=> {
+               console.debug(event);
                return event.lastEvents.map(lastEvent =>
                   (<BoxContainer><EventInfo
                      homeName={lastEvent.homeParticipant}

@@ -6,7 +6,7 @@ import HeadToHeadWidget from './Components/HeadToHeadWidget';
 import store from './Store/store';
 
 coreLibrary.init({
-   eventId: 1003328180
+   eventId: null
 })
 .then(() => store.getEventStatistics(coreLibrary.args.eventId))
 .then((events) => {
