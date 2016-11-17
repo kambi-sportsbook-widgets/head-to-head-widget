@@ -17,6 +17,11 @@
    text-align: left;
    margin-left: 17px;
    align-self: center;
+   line-height: 20px;
+   max-height: 40px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: pre-line;
 }
 
 :local(.homeName) {
@@ -25,10 +30,19 @@
    text-align: right;
    margin-right: 17px;
    align-self: center;
+   line-height: 20px;
+   max-height: 40px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: pre-wrap;
 }
 
 :local(.eventName) {
    font-size: 12px;
    margin-top: 10px;
    text-align: center;
+   max-height: 20px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
 }
