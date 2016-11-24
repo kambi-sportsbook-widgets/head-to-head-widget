@@ -10,6 +10,10 @@ coreLibrary.init({
 })
 .then(() => store.getEventStatistics(coreLibrary.args.eventId))
 .then((events) => {
+   if ( events[0].lastEvents === undefined || events[0].lastEvents.length === 0 ) {
+      throw new Error('H2H was unable to get last events. Removing itself');
+   }
+   console.log(events);
    document.getElementsByTagName('body')[0].style.display = 'block';
    ReactDOM.render(
       <HeadToHeadWidget events={events} />,

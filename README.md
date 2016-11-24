@@ -1,6 +1,6 @@
 # head-to-head-widget
 
-![](https://github.com/kambi-sportsbook-widgets/head-to-head-widget/blob/master/screenshot.png?raw=true)
+![](./screenshot.png)
 
 Displays the meetup history of two teams
 
@@ -13,7 +13,7 @@ Arguments and default values:
 }
 ```
 
-1. `eventId` - number - id of the event from which to get the last meetups from
+1. `eventId` - number - id of the event from which to get the last meetups from. Normally the widget will get the id from page in which it resides 
 
 
 ### Build Instructions
