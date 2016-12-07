@@ -5,12 +5,6 @@ import EventInfo from './EventInfo/EventInfo';
 import BoxContainer from './BoxContainer/BoxContainer';
 
 class HeadToHeadWidget extends React.Component {
-
-   constructor(props) {
-      super(props);
-      widgetModule.enableWidgetTransition(true);
-   }
-
    /**
     * Called after component mounts
     */

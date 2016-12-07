@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { coreLibrary, widgetModule } from 'kambi-widget-core-library';
-import './app.scss';
 import HeadToHeadWidget from './Components/HeadToHeadWidget';
 import store from './Store/store';
 
