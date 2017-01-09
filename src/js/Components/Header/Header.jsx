@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Header.scss';
 
 const Header = ({ title }) => {
-   return (<div className={styles.general}>{ title }</div>)
+   return (<div className={styles.general + ' KambiWidget-card-support-text-color'}>{ title }</div>)
 };
 
 Header.propTypes = {
