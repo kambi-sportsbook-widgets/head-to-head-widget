@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BoxContainer.render() renders correctly with children 1`] = `
+<div
+  className="KambiWidget-card-inner-border general"
+>
+  <div />
+  <div />
+</div>
+`;
+
+exports[`BoxContainer.render() renders correctly with no children 1`] = `
+<div
+  className="KambiWidget-card-inner-border general"
+/>
+`;

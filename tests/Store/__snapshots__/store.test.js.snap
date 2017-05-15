@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`store.getEventStatistics() does not include scores with missing away score 1`] = `
+Array [
+  Object {
+    "awayTeam": "Sweden",
+    "eventId": 1005,
+    "homeTeam": "Poland",
+    "lastEvents": Array [],
+    "maxScore": -Infinity,
+  },
+]
+`;
+
+exports[`store.getEventStatistics() does not include scores with missing home score 1`] = `
+Array [
+  Object {
+    "awayTeam": "Sweden",
+    "eventId": 1004,
+    "homeTeam": "Poland",
+    "lastEvents": Array [],
+    "maxScore": -Infinity,
+  },
+]
+`;
+
+exports[`store.getEventStatistics() reads eventId from arguments 1`] = `
+Array [
+  Object {
+    "awayTeam": "Sweden",
+    "eventId": 1001,
+    "homeTeam": "Poland",
+    "lastEvents": Array [],
+    "maxScore": -Infinity,
+  },
+]
+`;
+
+exports[`store.getEventStatistics() reads eventId from pageParam 1`] = `
+Array [
+  Object {
+    "awayTeam": "Sweden",
+    "eventId": 64255,
+    "homeTeam": "Poland",
+    "lastEvents": Array [],
+    "maxScore": -Infinity,
+  },
+]
+`;
+
+exports[`store.getEventStatistics() returns proper statistics 1`] = `
+Array [
+  Object {
+    "awayTeam": "Sweden",
+    "eventId": 1002,
+    "homeTeam": "Poland",
+    "lastEvents": Array [
+      Object {
+        "awayParticipant": "Sweden",
+        "awayScore": 0,
+        "homeParticipant": "Poland",
+        "homeScore": 1,
+        "scoreOnLeft": 1,
+        "scoreOnRight": 0,
+        "start": 100,
+        "type": "TYPE_A",
+      },
+    ],
+    "maxScore": 1,
+  },
+]
+`;
+
+exports[`store.getEventStatistics() swaps teams to match home/away order 1`] = `
+Array [
+  Object {
+    "awayTeam": "Sweden",
+    "eventId": 1003,
+    "homeTeam": "Poland",
+    "lastEvents": Array [
+      Object {
+        "awayParticipant": "Poland",
+        "awayScore": 1,
+        "homeParticipant": "Sweden",
+        "homeScore": 0,
+        "scoreOnLeft": 1,
+        "scoreOnRight": 0,
+        "start": 101,
+        "type": "TYPE_A",
+      },
+    ],
+    "maxScore": 1,
+  },
+]
+`;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeadToHeadWidget.render() renders correctly 1`] = `
+<div>
+  <Header
+    title="Translated Head to head"
+  />
+  <BoxContainer>
+    <EventInfo
+      awayName="Sweden"
+      awayScore={0}
+      homeName="Poland"
+      homeScore={3}
+      start={1493942400000}
+    />
+  </BoxContainer>
+  <BoxContainer>
+    <EventInfo
+      awayName="Serbia"
+      awayScore={0}
+      homeName="Montenegro"
+      homeScore={1}
+      start={1493856000000}
+    />
+  </BoxContainer>
+</div>
+`;

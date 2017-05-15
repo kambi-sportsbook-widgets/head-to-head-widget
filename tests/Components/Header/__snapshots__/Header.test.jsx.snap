@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header.render() renders correctly with title 1`] = `
+<div
+  className="general KambiWidget-card-support-text-color"
+>
+  test title
+</div>
+`;

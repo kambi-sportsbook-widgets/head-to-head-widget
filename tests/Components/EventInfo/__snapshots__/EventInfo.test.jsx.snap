@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventInfo.render() renders correctly with required props 1`] = `
+<div>
+  <EventInfoContainer>
+    <div
+      className="homeName KambiWidget-card-support-text-color"
+    >
+      Poland
+    </div>
+    <ScoreIndicator
+      score={3}
+    />
+    <ScoreIndicator
+      score={1}
+    />
+    <div
+      className="awayName KambiWidget-card-support-text-color"
+    >
+      Sweden
+    </div>
+  </EventInfoContainer>
+  <div
+    className="eventName KambiWidget-card-support-text-color"
+  >
+    5 month4 2017
+  </div>
+</div>
+`;

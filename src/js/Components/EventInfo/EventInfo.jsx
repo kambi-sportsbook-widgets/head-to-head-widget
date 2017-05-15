@@ -6,8 +6,8 @@ import styles from './EventInfo.scss';
 
 const t = translationModule.getTranslation.bind(translationModule);
 
-const EventInfo = ({ homeName, homeScore, awayName, awayScore, eventName }) => {
-   const date = new Date(eventName);
+const EventInfo = ({ homeName, homeScore, awayName, awayScore, start }) => {
+   const date = new Date(start);
    const formatedDate = date.getDate() + ' ' + t('month' + [date.getMonth()]) + ' ' + date.getFullYear();
    return (
       <div>
@@ -26,7 +26,7 @@ EventInfo.propTypes = {
    homeScore: React.PropTypes.number.isRequired,
    awayName: React.PropTypes.string.isRequired,
    awayScore: React.PropTypes.number.isRequired,
-   eventName: React.PropTypes.string
+   start: React.PropTypes.number.isRequired
 };
 
 export default EventInfo;

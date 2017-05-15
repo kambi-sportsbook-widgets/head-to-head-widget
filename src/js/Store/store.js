@@ -1,4 +1,4 @@
-import { coreLibrary, widgetModule, translationModule, offeringModule, statisticsModule } from 'kambi-widget-core-library';
+import { coreLibrary, statisticsModule } from 'kambi-widget-core-library';
 
 /**
  * Builds statistics information object for usage in template.
@@ -56,14 +56,11 @@ const parseDataInfo = function (statistics) {
 
 const getEventStatistics = function (eventId) {
    if (!eventId) {
-      console.warn('eventId set from pageParam');
       eventId = coreLibrary.pageInfo.pageParam;
-   } else {
-      console.warn('eventId set from args.eventId');
    }
 
    return statisticsModule.getHeadToHeadStatistics(eventId)
-   .then(parseDataInfo);
+      .then(parseDataInfo);
 };
 
 export default { getEventStatistics };

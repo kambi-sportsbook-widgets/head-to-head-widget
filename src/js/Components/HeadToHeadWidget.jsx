@@ -1,5 +1,5 @@
 import React from 'react';
-import { coreLibrary, widgetModule, translationModule, statisticsModule } from 'kambi-widget-core-library';
+import { widgetModule, translationModule } from 'kambi-widget-core-library';
 import Header from './Header/Header';
 import EventInfo from './EventInfo/EventInfo';
 import BoxContainer from './BoxContainer/BoxContainer';
@@ -23,14 +23,14 @@ class HeadToHeadWidget extends React.Component {
       return (
          <div>
             <Header title={t('Head to head')} />
-            { this.props.events.map((event)=> {
+            { this.props.events.map((event) => {
                return event.lastEvents.map(lastEvent =>
                   (<BoxContainer><EventInfo
                      homeName={lastEvent.homeParticipant}
                      homeScore={lastEvent.homeScore}
                      awayName={lastEvent.awayParticipant}
                      awayScore={lastEvent.awayScore}
-                     eventName={lastEvent.start} />
+                     start={lastEvent.start} />
                   </BoxContainer>))
             })}
          </div>
