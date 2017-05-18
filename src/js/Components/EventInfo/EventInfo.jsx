@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { translationModule } from 'kambi-widget-core-library';
 import EventInfoContainer from './EventInfoContainer/EventInfoContainer';
 import ScoreIndicator from './ScoreIndicator/ScoreIndicator';
@@ -22,11 +23,11 @@ const EventInfo = ({ homeName, homeScore, awayName, awayScore, start }) => {
 };
 
 EventInfo.propTypes = {
-   homeName: React.PropTypes.string.isRequired,
-   homeScore: React.PropTypes.number.isRequired,
-   awayName: React.PropTypes.string.isRequired,
-   awayScore: React.PropTypes.number.isRequired,
-   start: React.PropTypes.number.isRequired
+   homeName: PropTypes.string.isRequired,
+   homeScore: PropTypes.number.isRequired,
+   awayName: PropTypes.string.isRequired,
+   awayScore: PropTypes.number.isRequired,
+   start: PropTypes.number.isRequired
 };
 
 export default EventInfo;

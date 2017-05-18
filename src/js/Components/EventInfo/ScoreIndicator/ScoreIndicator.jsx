@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './ScoreIndicator.scss';
 
 const ScoreIndicator = ({ score }) => {
@@ -11,7 +12,7 @@ const ScoreIndicator = ({ score }) => {
 };
 
 ScoreIndicator.propTypes = {
-   score: React.PropTypes.number.isRequired,
+   score: PropTypes.number.isRequired,
 };
 
 export default ScoreIndicator;

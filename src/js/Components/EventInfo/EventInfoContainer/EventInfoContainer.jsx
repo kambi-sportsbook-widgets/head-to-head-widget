@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './EventInfoContainer.scss';
 
 const EventInfoContainer = ({ children }) => {
@@ -6,7 +7,7 @@ const EventInfoContainer = ({ children }) => {
 };
 
 EventInfoContainer.propTypes = {
-   children: React.PropTypes.arrayOf(React.PropTypes.element).isRequired
+   children: PropTypes.arrayOf(PropTypes.element).isRequired
 };
 
 export default EventInfoContainer;

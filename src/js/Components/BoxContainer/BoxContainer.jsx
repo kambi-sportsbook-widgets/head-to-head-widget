@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './BoxContainer.scss';
 
 const BoxContainer = ({ children }) => {
@@ -6,7 +7,7 @@ const BoxContainer = ({ children }) => {
 };
 
 BoxContainer.propTypes = {
-   children: React.PropTypes.node
+   children: PropTypes.node
 };
 
 export default BoxContainer;

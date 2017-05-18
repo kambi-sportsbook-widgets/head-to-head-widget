@@ -1,8 +1,6 @@
 import store from '../../src/js/Store/store';
 import { statisticsModule } from 'kambi-widget-core-library';
 
-const originalDateNow = window.Date.now;
-
 jest.mock('kambi-widget-core-library', () => ({
    coreLibrary: {
       pageInfo: {

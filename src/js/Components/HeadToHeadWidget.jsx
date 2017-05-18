@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { widgetModule, translationModule } from 'kambi-widget-core-library';
 import Header from './Header/Header';
 import EventInfo from './EventInfo/EventInfo';
 import BoxContainer from './BoxContainer/BoxContainer';
 
-class HeadToHeadWidget extends React.Component {
+class HeadToHeadWidget extends Component {
    /**
     * Called after component mounts
     */
@@ -39,7 +40,7 @@ class HeadToHeadWidget extends React.Component {
 }
 
 HeadToHeadWidget.propTypes = {
-   events: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
+   events: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default HeadToHeadWidget;
