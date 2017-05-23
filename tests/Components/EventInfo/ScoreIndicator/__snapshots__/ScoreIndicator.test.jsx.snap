@@ -5,9 +5,13 @@ exports[`ScoreIndicator.render() renders correctly with score 1`] = `
   className="container"
 >
   <div
-    className="KambiWidget-box--neutral scoreBox"
+    className="KambiWidget-neutralPrimaryColor scoreBox"
   >
-    100
+    <span
+      className="KambiWidget-neutralSecondaryColor scoreBoxText"
+    >
+      100
+    </span>
   </div>
 </div>
 `;
