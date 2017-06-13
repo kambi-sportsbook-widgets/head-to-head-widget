@@ -18,7 +18,7 @@ describe('EventInfo.render()', () => {
             homeScore={3}
             awayName="Sweden"
             awayScore={1}
-            start={new Date('2017-05-05').getTime()}
+            start={new Date('2017-05-05').toISOString()}
          />
       )).toMatchSnapshot();
    });

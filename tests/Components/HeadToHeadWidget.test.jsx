@@ -21,7 +21,7 @@ const mockEvent0 = {
    homeScore: 3,
    awayParticipant: 'Sweden',
    awayScore: 0,
-   start: new Date('2017-05-05').getTime()
+   start: new Date('2017-05-05').toISOString()
 };
 
 const mockEvent1 = {
@@ -29,7 +29,7 @@ const mockEvent1 = {
    homeScore: 1,
    awayParticipant: 'Serbia',
    awayScore: 0,
-   start: new Date('2017-05-04').getTime()
+   start: new Date('2017-05-04').toISOString()
 };
 
 describe('HeadToHeadWidget.render()', () => {

@@ -1,15 +1,15 @@
-:local(.general) {
+.general {
 
 }
 
-:local(.name) {
+.name {
    font-size: 16px;
    display: block;
    text-align: right;
    margin-right: 17px;
 }
 
-:local(.awayName) {
+.awayName {
    flex: 1;
    font-size: 16px;
    text-align: left;
@@ -22,7 +22,7 @@
    white-space: pre-line;
 }
 
-:local(.homeName) {
+.homeName {
    flex: 1;
    font-size: 16px;
    text-align: right;
@@ -35,7 +35,7 @@
    white-space: pre-wrap;
 }
 
-:local(.eventName) {
+.eventName {
    font-size: 12px;
    margin-top: 10px;
    text-align: center;

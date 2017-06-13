@@ -1,4 +1,4 @@
-:local(.container) {
+.container {
    display:flex;
    flex-direction: row;
    flex-wrap: nowrap;
@@ -6,7 +6,7 @@
    flex-basis: 48px;
 }
 
-:local(.scoreBox) {
+.scoreBox {
    background-color: currentColor;
    border-radius: 2px;
    text-align: center;
@@ -16,7 +16,7 @@
    margin: 0 2px;
 }
 
-:local(.scoreBoxText) {
+.scoreBoxText {
    font-size: 24px;
    font-weight: bold;
    line-height: 40px;

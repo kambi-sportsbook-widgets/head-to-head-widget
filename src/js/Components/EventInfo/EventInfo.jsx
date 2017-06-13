@@ -27,7 +27,7 @@ EventInfo.propTypes = {
    homeScore: PropTypes.number.isRequired,
    awayName: PropTypes.string.isRequired,
    awayScore: PropTypes.number.isRequired,
-   start: PropTypes.number.isRequired
+   start: PropTypes.string.isRequired
 };
 
 export default EventInfo;

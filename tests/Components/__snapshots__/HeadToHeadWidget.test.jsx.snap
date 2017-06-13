@@ -11,7 +11,7 @@ exports[`HeadToHeadWidget.render() renders correctly 1`] = `
       awayScore={0}
       homeName="Poland"
       homeScore={3}
-      start={1493942400000}
+      start="2017-05-05T00:00:00.000Z"
     />
   </BoxContainer>
   <BoxContainer>
@@ -20,7 +20,7 @@ exports[`HeadToHeadWidget.render() renders correctly 1`] = `
       awayScore={0}
       homeName="Montenegro"
       homeScore={1}
-      start={1493856000000}
+      start="2017-05-04T00:00:00.000Z"
     />
   </BoxContainer>
 </div>

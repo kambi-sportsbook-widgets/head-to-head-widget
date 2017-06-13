@@ -1,1 +1,3 @@
-@import '~kambi-widget-core-library/src/scss/core.scss';
+:global {
+   @import '~kambi-widget-core-library/src/scss/core.scss';
+}
