@@ -14,14 +14,14 @@
     "test": "kambi-widgets-cli test"
   },
   "dependencies": {
-    "kambi-widget-core-library": "^3.7.2",
+    "kambi-widget-core-library": "^3.8.0",
     "prop-types": "^15.4.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-lite": "^0.15.26"
   },
   "devDependencies": {
-    "kambi-widget-build-tools": "^2.9.5"
+    "kambi-widget-build-tools": "^3.0.1"
   },
   "repository": {
     "type": "git",
