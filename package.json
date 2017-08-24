@@ -1,6 +1,6 @@
 {
   "name": "head-to-head-widget",
-  "version": "1.3.8",
+  "version": "1.3.9",
   "description": "Head to Head Widget",
   "main": "dist/index.html",
   "scripts": {
