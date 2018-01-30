@@ -1,6 +1,6 @@
 {
   "name": "head-to-head-widget",
-  "version": "1.3.14",
+  "version": "1.3.15",
   "description": "Head to Head Widget",
   "main": "dist/index.html",
   "scripts": {
@@ -12,8 +12,7 @@
     "preversion": "kambi-widgets-cli preversion",
     "postversion": "kambi-widgets-cli postversion",
     "test": "kambi-widgets-cli test",
-    "prettier-all":
-      "find ./src -name \"*.jsx\" -o -name \"*.js\" | xargs prettier --write",
+    "prettier-all": "find ./src -name \"*.jsx\" -o -name \"*.js\" | xargs prettier --write",
     "precommit": "lint-staged"
   },
   "prettier": {
@@ -24,7 +23,10 @@
     "trailingComma": "es5"
   },
   "lint-staged": {
-    "*.{js,json,css}": ["prettier --write", "git add"]
+    "*.{js,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "kambi-widget-core-library": "^3.11.1",
@@ -39,14 +41,11 @@
   },
   "repository": {
     "type": "git",
-    "url":
-      "git+ssh://git@github.com/kambi-sportsbook-widgets/head-to-head-widget.git"
+    "url": "git+ssh://git@github.com/kambi-sportsbook-widgets/head-to-head-widget.git"
   },
   "license": "MIT",
   "bugs": {
-    "url":
-      "https://github.com/kambi-sportsbook-widgets/head-to-head-widget/issues"
+    "url": "https://github.com/kambi-sportsbook-widgets/head-to-head-widget/issues"
   },
-  "homepage":
-    "https://github.com/kambi-sportsbook-widgets/head-to-head-widget#readme"
+  "homepage": "https://github.com/kambi-sportsbook-widgets/head-to-head-widget#readme"
 }
