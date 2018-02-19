@@ -29,7 +29,7 @@
     ]
   },
   "dependencies": {
-    "kambi-widget-core-library": "^3.11.2",
+    "kambi-widget-core-library": "^3.12.1",
     "prop-types": "^15.4.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0"
