@@ -25,8 +25,8 @@ class HeadToHeadWidget extends Component {
       <div>
         <Header title={t('Head to head')} />
         {this.props.events.map(event => {
-          return event.lastEvents.map(lastEvent => (
-            <BoxContainer>
+          return event.lastEvents.map((lastEvent, i) => (
+            <BoxContainer key={i}>
               <EventInfo
                 homeName={lastEvent.homeParticipant}
                 homeScore={lastEvent.homeScore}

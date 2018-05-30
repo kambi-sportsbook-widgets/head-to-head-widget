@@ -6,8 +6,13 @@ import store from './Store/store'
 
 coreLibrary
   .init({
-    eventId: null,
+    eventId: 1004710940,
   })
+  .then(
+    () =>
+      (coreLibrary.config.apiStatisticsBaseUrl =
+        'https://e1-api.kambi.com/statistics/api/')
+  )
   .then(() => store.getEventStatistics(coreLibrary.args.eventId))
   .then(events => {
     if (
