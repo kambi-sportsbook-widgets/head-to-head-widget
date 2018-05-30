@@ -27,7 +27,7 @@ coreLibrary
     document.getElementsByTagName('body')[0].style.display = 'block'
     ReactDOM.render(
       <HeadToHeadWidget events={events} />,
-      document.getElementById('root')
+      coreLibrary.rootElement
     )
   })
   .catch(error => {
