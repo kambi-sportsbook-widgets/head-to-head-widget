@@ -3,7 +3,7 @@
   "version": "1.4.3",
   "description": "Head to Head Widget",
   "main": "dist/index.html",
-  "widgetCssVersion": "1.0.0.68",
+  "widgetCssVersion": "1.0.0.72",
   "scripts": {
     "clean": "kambi-widgets-cli clean",
     "prestart": "npm run clean",
