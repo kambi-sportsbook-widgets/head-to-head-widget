@@ -3,7 +3,7 @@
   "version": "1.4.4",
   "description": "Head to Head Widget",
   "main": "dist/index.html",
-  "widgetCssVersion": "1.0.0.72",
+  "widgetCssVersion": "1.0.0.84",
   "scripts": {
     "clean": "kambi-widgets-cli clean",
     "prestart": "npm run clean",
@@ -35,7 +35,7 @@
     "https": true
   },
   "dependencies": {
-    "kambi-widget-core-library": "^4.8.0"
+    "kambi-widget-core-library": "^4.11.3"
   },
   "peerDependencies": {
     "prop-types": "x",
