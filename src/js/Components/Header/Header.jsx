@@ -4,7 +4,7 @@ import styles from './Header.scss'
 
 const Header = ({ title }) => {
   return (
-    <div className={styles.general + ' KambiWidget-primary-text-color'}>
+    <div className={styles.general + ' KambiWidget-card-text-color'}>
       {title}
     </div>
   )
