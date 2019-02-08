@@ -8,14 +8,6 @@ coreLibrary
   .init({
     eventId: null,
   })
-  /**
-   * FOR TESTING STANDALONE
-   */
-  // .then(
-  //   () =>
-  //     (coreLibrary.config.apiStatisticsBaseUrl =
-  //       'https://e1-api.kambi.com/statistics/api/')
-  // )
   .then(() => store.getEventStatistics(coreLibrary.args.eventId))
   .then(events => {
     if (

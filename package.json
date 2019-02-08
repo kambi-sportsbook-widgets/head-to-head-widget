@@ -1,9 +1,9 @@
 {
   "name": "head-to-head-widget",
-  "version": "1.4.4",
+  "version": "1.4.11",
   "description": "Head to Head Widget",
   "main": "dist/index.html",
-  "widgetCssVersion": "1.0.0.69",
+  "widgetCssVersion": "1.0.0.96",
   "scripts": {
     "clean": "kambi-widgets-cli clean",
     "prestart": "npm run clean",
@@ -12,6 +12,7 @@
     "build": "kambi-widgets-cli build",
     "start-embedded": "kambi-widgets-cli start-embedded",
     "build-embedded": "kambi-widgets-cli build-embedded",
+    "deploy:kambi": "npm run build && wdt deploy kambi -if",
     "preversion": "kambi-widgets-cli preversion",
     "postversion": "kambi-widgets-cli postversion",
     "test": "kambi-widgets-cli test",
@@ -34,8 +35,12 @@
   "devServer": {
     "https": true
   },
+  "useRealReact": {
+    "development": true,
+    "production": true
+  },
   "dependencies": {
-    "kambi-widget-core-library": "^4.8.0"
+    "kambi-widget-core-library": "^4.11.3"
   },
   "peerDependencies": {
     "prop-types": "x",
