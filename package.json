@@ -41,7 +41,7 @@
     "production": true
   },
   "dependencies": {
-    "kambi-widget-core-library": "^4.11.3"
+    "kambi-widget-core-library": "^4.11.4"
   },
   "peerDependencies": {
     "prop-types": "x",
